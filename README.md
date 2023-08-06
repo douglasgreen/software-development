@@ -14,7 +14,7 @@ Notes on software development.
 * [Exception Handling](exception_handling.md)
 * [Feature Creep](feature_creep.md)
 * [Function Usage](functions.md)
-* [Interfaces Documentation](object-oriented.md)
+* [Object-Oriented Programming](oop.md)
 * [JavaScript](javascript.md)
 * [Miscellaneous](misc.md)
 * [Namespace Guidelines](namespaces.md)
