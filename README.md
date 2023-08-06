@@ -28,5 +28,5 @@ Notes on software development.
 * [Strategies for Managing Software Upgrades](upgrade_strategy.md)
 * [Understanding Web Components and PageMaker](web_components.md)
 * [Unit Testing](unit_testing.md)
-* [User stories](user_stories.md)
+* [User Stories](user_stories.md)
 * [Web-Last Architecture](web-last.md)

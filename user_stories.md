@@ -1,4 +1,4 @@
-# User stories
+# User Stories
 
 ## Compared with use cases
 
