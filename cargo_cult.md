@@ -1,6 +1,6 @@
 # Cargo-Cult Programming
 
-Cargo-cult programming refers to the practice of programming by imitation without understanding, leading to potential errors and inefficiencies. It takes its name from a post-World War II phenomenon involving superficial imitation of technology. There are two primary forms of cargo-cult programming that you should be aware of:
+[Cargo-cult programming](https://en.wikipedia.org/wiki/Cargo_cult_programming) refers to the practice of programming by imitation without understanding, leading to potential errors and inefficiencies. It takes its name from a post-World War II phenomenon involving superficial imitation of technology. There are two primary forms of cargo-cult programming that you should be aware of:
 
 ### 1. Copying and pasting code without understanding
 
@@ -25,7 +25,7 @@ The term "cargo cult" comes from a South Pacific aboriginal religion that tried 
 
 ### Magic thinking
 
-The concept of cargo cult programming is akin to a form of magical thinking, where objects and rituals are perceived to have inherent power. This belief can extend to the world of programming, where the complexity of powerful tools and techniques can easily lead to a misconception that simply using them imparts value or success. However, the true virtue in using these tools and techniques doesn't lie in the mere act of applying them; it comes from the critical thinking employed to understand how and why they function within a specific context. Rather than treating these elements as magical solutions, a discerning programmer recognizes that their proper utilization requires thoughtful analysis and consideration, ensuring that they are the right fit for the task at hand.
+The concept of cargo cult programming is akin to a form of [magical thinking](https://en.wikipedia.org/wiki/Magical_thinking), where objects and rituals are perceived to have inherent power. This belief can extend to the world of programming, where the complexity of powerful tools and techniques can easily lead to a misconception that simply using them imparts value or success. However, the true virtue in using these tools and techniques doesn't lie in the mere act of applying them; it comes from the critical thinking employed to understand how and why they function within a specific context. Rather than treating these elements as magical solutions, a discerning programmer recognizes that their proper utilization requires thoughtful analysis and consideration, ensuring that they are the right fit for the task at hand.
 
 ### How to avoid cargo cult programming
 
