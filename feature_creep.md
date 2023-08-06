@@ -1,4 +1,4 @@
-# Feature creep
+# Feature Creep
 
 Many products in the market are constructed as a collection of features, subscribing to the belief that more features equate to a more powerful product. This mindset is also prevalent in the design of programming languages. The addition of features, however, leads to increased complexity and does not always adequately justify the achieved goals or added value of the new feature. In essence, each feature is considered to be cost-free, often addressing a marginal use case that fails to significantly boost the product's value. Unfortunately, the cumulative effect of these features escalates the cost, complexity, and maintainability of the system, creating a sprawling and burdensome infrastructure that contributes only minimal additional value.
 

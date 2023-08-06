@@ -1,21 +1,25 @@
-## Exceptions in PHP
+# Exception Handling
 
 Exceptions are primarily intended to handle unforeseen or exceptional situations in your code. They shouldn't be used for regular flow control which is better served by conditional statements and loops.
 
-### When should a function throw exceptions in PHP?
+## When should a function throw exceptions in PHP?
 
 * **Invalid Function Arguments:** Throw an exception if a function gets arguments that are out of bounds or inconsistent with what's expected.
 * **Resource Unavailability:** If your PHP code anticipates a certain resource (like a database connection, file, or an external service) to be present and it isn't, consider throwing an exception.
 * **Failure to Execute Essential Tasks:** If a crucial task fails (e.g., a database query not executing or an inability to write to a file), an exception should be thrown.
 * **Unexpected States:** If your PHP application ends up in an unexpected condition, such as when a variable isn't of the anticipated type or value, or if a class property gets accessed before being set, it's wise to throw an exception.
 
-### When should a function log an error in PHP?
+## When a function die instead of throwing exceptions?
+
+Exceptions are usually preferred. However, a command line program might exit with the dye command instead of an exception when providing user-oriented error messages.
+
+## When should a function log an error in PHP?
 
 The problem with exceptions is that they are intrusive. They stop the program and unwind the stack.
 
 If debugging information is required but the error is not considered to be severe, another option is to log the error rather than throwing the exception. This can be done with the `error_log()` function.
 
-### When should a function in PHP return null?
+## When should a function in PHP return null?
 
 A function might opt to return null in some circumstances:
 
@@ -26,7 +30,7 @@ A function might opt to return null in some circumstances:
 
 However, be cautious when opting to return null. Unhandled nulls can result in `NullPointerExceptions` which lack clarity. The need for added null checks can also increase the complexity of the code. So, you might want to think about other alternatives like using the Null Object pattern or indeed, throwing exceptions.
 
-### When to define a custom exception subclass in PHP?
+## When to define a custom exception subclass in PHP?
 
 Crafting custom exception subclasses in PHP can be beneficial for:
 

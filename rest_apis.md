@@ -1,4 +1,4 @@
-# Understanding REST APIs: A Guide
+# REST API Guidelines
 
 ## Introduction
 

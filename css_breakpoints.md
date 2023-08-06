@@ -1,4 +1,4 @@
-# Understanding CSS Breakpoints
+# CSS Breakpoint Guidelines
 
 In web design, CSS breakpoints help websites look good on different devices. Here's how a three-size system compares to other methods:
 
