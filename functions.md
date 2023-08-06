@@ -1,4 +1,4 @@
-# Functions: A Guide for Beginners
+# Function Usage
 
 ## What are functions and why are they important?
 

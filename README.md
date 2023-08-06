@@ -12,7 +12,7 @@ Notes on software development.
 * [Design Process for Web Applications](design_process.md)
 * [Error handling](error_handling.md)
 * [Feature creep](feature_creep.md)
-* [Functions: A Guide for Beginners](functions.md)
+* [Function Usage](functions.md)
 * [Interfaces Documentation](object-oriented.md)
 * [JavaScript](javascript.md)
 * [Miscellaneous](misc.md)
