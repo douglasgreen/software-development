@@ -1,7 +1,3 @@
-# Declarative Programming
-
-Certainly! Here's a revised version of the documentation, reorganized and rewritten for clarity:
-
 # Programming Paradigms: Declarative vs. Imperative
 
 Programming can be broadly categorized into two main paradigms: declarative and imperative. Each has its own strengths and weaknesses, and understanding them can help in designing more effective and manageable code.

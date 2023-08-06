@@ -1,4 +1,4 @@
-# Comprehensive versioning
+# Comprehensive Versioning
 
 ## Overview
 

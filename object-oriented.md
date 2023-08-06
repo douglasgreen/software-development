@@ -92,24 +92,24 @@ Interfaces establish a contract between classes, ensuring that certain methods a
 1. **Consistency:** The implementing class should not have extra public methods beyond what the interface defines, except for the constructor.
 2. **Aliasing:** To use an interface and its implementation concurrently, alias them, e.g., `use PageMaker\Contract\Registry as RegistryInterface`.
 
-# Class design principles
+## Class design principles
 
-## Access modifiers
+### Access modifiers
 
 1. **Flexibility:** Use `protected` or `public` to ensure class members can be extended by subclasses. Avoid private members which can't be overridden.
    
-## Method organization
+### Method organization
 
 1. **Modularity:** Decompose large functions into smaller, more manageable pieces to enhance extensibility.
 2. **Type-Checking:** Balance strict type-checking with input flexibility. 
 3. **Setup:** Ensure classes are easy to set up, well-documented, and intuitive.
 
-## Class naming
+### Class naming
 
 1. **Simplicity:** Avoid redundant words like "Manager" or "Handler."
 2. **PSR Naming:** For abstract classes, use the format: `Abstract<name>`. Interfaces don't require the "Interface" suffix and belong in the `Contract` directory.
 
-## Design principles
+### Design principles
 
 1. **Single Responsibility:** Each class should have a single responsibility. Separate I/O, processing, and storage.
 2. **Static Calls:** Avoid static calls. Use registries to enable class replacements at runtime. Static utility classes are exceptions.
@@ -118,7 +118,7 @@ Interfaces establish a contract between classes, ensuring that certain methods a
    - Order by access level: public > protected.
    - Logical order: magic methods > setters > getters > finalizers.
 
-## Controllers
+### Controllers
 
 Controllers are identified by routers using the pattern: `<page>Controller` with methods formatted as `get<action>` or `post<action>`.
 
