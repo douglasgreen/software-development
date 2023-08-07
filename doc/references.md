@@ -8,6 +8,7 @@
 * https://beamtic.com/creating-a-router-in-php
 * https://www.bbkane.com/blog/software-engineering-ideas-that-influence-me/
 * [The Worst API Ever Made, by Casey Muratori](https://caseymuratori.com/blog_0025)
+* [Some tactics for writing in public](https://jvns.ca/blog/2023/08/07/tactics-for-writing-in-public/)
 
 ## Wikipedia links
 
