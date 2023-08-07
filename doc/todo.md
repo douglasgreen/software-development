@@ -1,6 +1,8 @@
 # To-do list
 
 * Capitalize headings
+* Each page should have one topic.
+* Add links.
 
 ## Software engineering
 
@@ -25,3 +27,7 @@ JQuery is hard to upgrade because libraries depend on other libraries. These are
 ## Premature optimization
 
 This means you shouldn't obscure your program to make optimizations that you probably won't need. But rather you should wait until optimization is needed. The trade-off here is between programmer time who has to read obscure code and computer time, especially where very little computer time is being saved.
+
+## Working commits
+
+Ideally, each commit to a version control system should be tested in order to be bug free. That is all commits should be working commits. This ensures that you were doing incremental development and haven't left the system in a disorganized state. It also helps when you have to bisect the history in order to find bugs. You don't stumble across other bugs that interfere with your finding the first bug.
