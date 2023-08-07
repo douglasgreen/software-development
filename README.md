@@ -17,6 +17,7 @@ Notes on software development.
 * [Function Usage](doc/functions.md)
 * [JavaScript](doc/javascript.md)
 * [Miscellaneous](doc/misc.md)
+* [Myth of the 10x Developer](doc/10x_developer_myth.md)
 * [Namespace Guidelines](doc/namespaces.md)
 * [Object-Oriented Programming](doc/oop.md)
 * [Programming Paradigms: Declarative vs. Imperative](doc/declarative_programming.md)
