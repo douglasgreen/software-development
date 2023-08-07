@@ -37,7 +37,7 @@ Most software development uses the second or third model described above:
 - Benefits of this approach include:
   * **Faster Availability**: Essential features reach users quickly.
   * **Modular Design**: Building in stages promotes well-organized components, avoiding a chaotic "big ball of mud" structure.
-  * **Continuous Operation**: Keeping the system working at each stage lowers the risk of total project failure.
+  * **Continuous Operation**: Keeping the system working at each stage [lowers the risk of total project failure](https://www.microsoft.com/en-us/microsoft-365/business-insights-ideas/resources/the-6-not-so-obvious-reasons-a-project-plan-fails).
 
 ## Conclusion
 
