@@ -6,6 +6,8 @@ Notes on software development.
 * [ChatGPT Overview](doc/chatgpt.md)
 * [Code and Documentation Standards Guide](doc/coding_standards.md)
 * [Code Libraries vs. Frameworks](doc/code_libraries.md)
+* [Code Review Guidelines](doc/code_reviews.md)
+* [Commit Message Guidelines](doc/commit_messages.md)
 * [Comprehensive Versioning](doc/versioning.md)
 * [Content Organization Strategies](doc/organizing.md)
 * [Critical Thinking for Programmers](doc/critical_thinking.md)
