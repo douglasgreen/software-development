@@ -14,6 +14,7 @@ Notes on software development.
 * [Criticisms of Popular Web Technologies](doc/tech_criticisms.md)
 * [CSS Breakpoint Guidelines](doc/css_breakpoints.md)
 * [Design Process for Web Applications](doc/design_process.md)
+* [Domain-Driven Design](doc/domain-driven_design.md)
 * [Exception Handling](doc/exception_handling.md)
 * [Feature Creep](doc/feature_creep.md)
 * [Function Usage](doc/functions.md)
