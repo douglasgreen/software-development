@@ -25,6 +25,11 @@ On the other hand, User-Centered Design is primarily about designing software fr
 
 Both DDD and UCD serve as essential reminders that successful software goes beyond mere functionality. While DDD ensures the software is firmly grounded in its problem domain, UCD ensures it meets the actual needs and expectations of its users. Ideally, a holistic software design approach would incorporate insights from both philosophies, marrying domain expertise with a deep understanding of user needs.
 
+## Practicing DDD
+
+1. Define the domain in your data model and API.
+2. Provide a glossary of ubiquitous language approved by domain experts.
+
 ## Conclusion:
 
 Embracing Domain-Driven Design is about understanding and respecting the domain's intricacies. It urges developers to look beyond the code and collaborate with experts to deliver solutions that genuinely address the heart of the problem.
