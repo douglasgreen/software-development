@@ -18,3 +18,18 @@ Install these tools:
 * [PHPStan](https://phpstan.org/) for linting
 * [PHPUnit](https://phpunit.de/index.html) for unit tests
 * [Rector](https://getrector.com/) for upgrades
+
+### Config files
+
+Set up config files for each tool:
+* phpcs.xml for PHPCS
+* phpmd.xml for PHPMD
+* phpstan.neon for PHPStan
+* phpunit.xml for PHPUnit
+* rector.php for Rector
+
+### PHPStan
+
+* Define [PHPStan global or local
+  aliases](https://phpstan.org/writing-php-code/phpdoc-types#global-type-aliases)
+  for any multi-dimenstional arrays or shapes.
