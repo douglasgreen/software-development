@@ -36,5 +36,7 @@ Set up config files for each tool:
 
 ### Maintenance
 
-- Run `composer outdated`.
+- Run `composer outdated` to check for upgrades.
+- Run `composer update` to update within current version range.
+- Run `composer update --with-all-dependencies` to update all dependencies.
 - Update the Rector config file and run it.
