@@ -1,3 +1,5 @@
 # Project Checklist
 
-* Add a REAMDE.md at the project root.
+* Add a README.md at the project root.
+* Make typical project directories.
+* Install any third-party dependencies.
