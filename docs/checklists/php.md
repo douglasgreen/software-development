@@ -36,5 +36,5 @@ Set up config files for each tool:
 
 ### Maintenance
 
-- Run composer outdated.
+- Run `composer outdated`.
 - Update the Rector config file and run it.
