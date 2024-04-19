@@ -58,3 +58,4 @@ scripts.
 
 * [Project Checklist](doc/checklist.project.md)
 * [PHP Checklist](doc/checklist/php.md)
+* [JavaScript Checklist](doc/checklist/js.md)
