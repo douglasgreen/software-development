@@ -56,6 +56,6 @@ Checklists for software development. See my [template
 project](https://github.com/douglasgreen/template) for sample project setup
 scripts.
 
-* [Project Checklist](docs/checklist.project.md)
-* [PHP Checklist](docs/checklist/php.md)
-* [JavaScript Checklist](docs/checklist/js.md)
+* [Project Checklist](docs/checklists.project.md)
+* [PHP Checklist](docs/checklists/php.md)
+* [JavaScript Checklist](docs/checklists/js.md)
