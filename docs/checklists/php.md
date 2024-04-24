@@ -34,6 +34,12 @@ Set up config files for each tool:
   aliases](https://phpstan.org/writing-php-code/phpdoc-types#global-type-aliases)
   for any multi-dimenstional arrays or shapes.
 
+### PDO
+
+- Use PDO instead of MySQLi because it's cross-platform and allows named
+  parameters.
+- Use named parameters intead of positional parameters.
+
 ### Maintenance
 
 - Run `composer outdated` to check for upgrades.
