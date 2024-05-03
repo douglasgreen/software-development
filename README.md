@@ -40,6 +40,7 @@ Notes on software development.
 ## Software Engineering
 
 * [Function Usage](docs/functions.md)
+* [Lehman's Laws](docs/lehmans_laws.md)
 * [Myth of the 10x Developer](docs/10x_developer_myth.md)
 * [User Stories](docs/user_stories.md)
 
