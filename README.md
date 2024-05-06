@@ -50,13 +50,3 @@ Notes on software development.
 * [Content Organization Strategies](docs/organizing.md)
 * [Miscellaneous](docs/misc.md)
 * [References](docs/references.md)
-
-## Checklists
-
-Checklists for software development. See my [template
-project](https://github.com/douglasgreen/template) for sample project setup
-scripts.
-
-* [Project Checklist](docs/checklists.project.md)
-* [PHP Checklist](docs/checklists/php.md)
-* [JavaScript Checklist](docs/checklists/js.md)
