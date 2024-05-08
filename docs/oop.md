@@ -122,4 +122,8 @@ Interfaces establish a contract between classes, ensuring that certain methods a
 
 Controllers are identified by routers using the pattern: `<page>Controller` with methods formatted as `get<action>` or `post<action>`.
 
+## Method chaining
+
+All object setter functions should return $this for chaining.
+
 <!-- DSG/ChatGPT 7/25/2023 -->
