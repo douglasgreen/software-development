@@ -126,4 +126,10 @@ Controllers are identified by routers using the pattern: `<page>Controller` with
 
 All object setter functions should return $this for chaining.
 
+## Properties
+
+Don't set temporary properties. Property should be permanent traits. Instead,
+past temporary properties around as arguments or create a new class with the
+command pattern that has only temporary properties.
+
 <!-- DSG/ChatGPT 7/25/2023 -->
