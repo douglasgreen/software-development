@@ -132,4 +132,10 @@ Don't set temporary properties. Property should be permanent traits. Instead,
 past temporary properties around as arguments or create a new class with the
 command pattern that has only temporary properties.
 
+## Program API
+
+What classes and functions to expose? If a class is not used independently,
+construct it internally to another class. Consider having a single public class
+with chained setters.
+
 <!-- DSG/ChatGPT 7/25/2023 -->
