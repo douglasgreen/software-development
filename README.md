@@ -18,6 +18,7 @@ Notes on software development.
 * [Code Review Guidelines](docs/code_reviews.md)
 * [Commit Message Guidelines](docs/commit_messages.md) 
 * [Comprehensive Versioning](docs/versioning.md)
+* [Defining Exceptions](docs/defining_exceptions.md)
 * [Exception Handling](docs/exception_handling.md)
 * [Feature Creep](docs/feature_creep.md)
 * [Namespace Guidelines](docs/namespaces.md)
