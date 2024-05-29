@@ -1,6 +1,6 @@
 {
-    "name": "douglasgreen/outlines",
-    "description": "Outlines written by ChatGPT-4, Claude-3, and Phind.com on various subjects",
+    "name": "douglasgreen/software-development",
+    "description": "Notes on software development",
     "license": "MIT",
     "engines": {
         "node": ">=18",
