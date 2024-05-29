@@ -1,3 +1,3 @@
 # PHPStan
 
-* Use type shapes for complex arrays.
+-   Use type shapes for complex arrays.

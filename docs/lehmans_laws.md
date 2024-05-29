@@ -1,4 +1,5 @@
 # Lehman's Laws of Software Development
+
 The Laws of Software Evolution, originally formulated by Lehman and Belady in
 the 1970s, provide insights into the nature of software systems and their
 evolution. The laws have grown from the original 3 to 8 over the years.
@@ -8,9 +9,10 @@ makes the programming process self-regulating with statistically determinable
 trends and invariances. Individual decisions may appear localized, but their
 aggregation produces regular overall system responses.
 
-The five key laws are: 
+The five key laws are:
+
 1. Change is continuous (programs are never 'done')
-2. Complexity increases unless work is done to maintain or reduce it 
+2. Complexity increases unless work is done to maintain or reduce it
 3. Program evolution follows statistically determinable trends and invariances
 4. Work rates are invariant (the global activity rate on a project tends to be
    stable)

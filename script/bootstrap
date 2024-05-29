@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# script/bootstrap: Resolve all dependencies that the application requires to
+#                   run.
+# @see https://github.blog/2015-06-30-scripts-to-rule-them-all/
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+# Install Composer dependencies
+if [ -f "composer.json" ]; then
+    echo "==> Installing Composer dependencies..."
+    composer install --no-interaction --prefer-dist
+fi
+
+# Install NPM dependencies
+if [ -f "package.json" ]; then
+    echo "==> Installing NPM dependencies..."
+    npm install --silent
+fi
