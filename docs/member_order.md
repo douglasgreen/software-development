@@ -12,8 +12,8 @@ Group elements in the order shown below. Use alphabetical order within a group.
 
 ## Access order
 - public
-- private
 - protected
+- private
 
 ## Static order
 - static
