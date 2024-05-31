@@ -15,7 +15,7 @@ Group elements in the order shown below. Use alphabetical order within a group.
 - protected
 - private
 
-## Static order
+## Scope order
 - static
 - const
 - instance
