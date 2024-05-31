@@ -26,7 +26,7 @@ Group elements in the order shown below. Use alphabetical order within a group.
 
 ## Data type order
 - resource
-- object
+- object (then by class name)
 - array
 - string
 - float
