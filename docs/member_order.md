@@ -3,32 +3,38 @@
 Group elements in the order shown below. Use alphabetical order within a group.
 
 ## Member order
-- properties
-- methods
+
+-   properties
+-   methods
 
 ## Abstract order
-- abstract
-- concrete
+
+-   abstract
+-   concrete
 
 ## Access order
-- public
-- protected
-- private
+
+-   public
+-   protected
+-   private
 
 ## Scope order
-- static
-- const
-- instance
+
+-   static
+-   const
+-   instance
 
 ## Function argument order
-- mandatory
-- optional
+
+-   mandatory
+-   optional
 
 ## Data type order
-- resource
-- object (then by class name)
-- array
-- string
-- float
-- int
-- boolean
+
+-   resource
+-   object (then by class name)
+-   array
+-   string
+-   float
+-   int
+-   boolean
