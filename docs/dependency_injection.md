@@ -8,3 +8,5 @@ calls. You don't need fancy DI methods or containers.
 
 An exception is a class that is created inside a class with local arguments not
 available outside the class. These need not be injected.
+
+Another exception is a unit test class, which can do their own setup.
