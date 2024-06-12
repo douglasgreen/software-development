@@ -1,7 +1,6 @@
 # References
 
-@todo Add these references to text. Copy all references here for summary. Add
-titles.
+@todo Add these references to text. Copy all references here for summary. Add titles.
 
 -   https://www.elinext.com/blog/modular-web-design/
 -   https://www.designrush.com/agency/website-design-development/trends/modular-web-design
