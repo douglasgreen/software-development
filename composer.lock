@@ -1,0 +1,101 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5797c8b18921e43ca3a8fcebad39275a",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "douglasgreen/config-setup",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/douglasgreen/config-setup.git",
+                "reference": "e9815226d8fa9d27d91f0fc292dfda36b4349add"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/e9815226d8fa9d27d91f0fc292dfda36b4349add",
+                "reference": "e9815226d8fa9d27d91f0fc292dfda36b4349add",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "^2.15",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5",
+                "rector/rector": "^1.0",
+                "symplify/easy-coding-standard": "^12.2"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DouglasGreen\\ConfigSetup\\": "src/"
+                }
+            },
+            "scripts": {
+                "lint": [
+                    "ecs",
+                    "rector --dry-run",
+                    "./run_phpmd.sh",
+                    "./run_phpstan.sh"
+                ],
+                "lint:fix": [
+                    "ecs --fix",
+                    "rector"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Douglas Green",
+                    "email": "douglas@nurd.site",
+                    "homepage": "https://nurd.site/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Preconfigured setup files for linting, fixing, and testing PHP and JavaScript projects",
+            "homepage": "https://github.com/douglasgreen/config-setup",
+            "keywords": [
+                "automation",
+                "ci-cd",
+                "code-quality",
+                "coding-standards",
+                "composer",
+                "config",
+                "fixing",
+                "linting",
+                "php",
+                "php-cs-fixer",
+                "phpcs",
+                "phpunit",
+                "static-analysis",
+                "testing"
+            ],
+            "support": {
+                "source": "https://github.com/douglasgreen/config-setup/tree/main",
+                "issues": "https://github.com/douglasgreen/config-setup/issues"
+            },
+            "time": "2024-06-15T18:50:48+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "douglasgreen/config-setup": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.1"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

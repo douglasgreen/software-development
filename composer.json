@@ -1,0 +1,26 @@
+{
+    "name": "douglasgreen/software-development",
+    "description": "Notes on software development",
+    "license": "MIT",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/douglasgreen/config-setup"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "douglasgreen/config-setup": "dev-main"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "vendor/douglasgreen/config-setup/bin/copy_files.php --wrap 100"
+        ],
+        "post-update-cmd": [
+            "vendor/douglasgreen/config-setup/bin/copy_files.php --wrap 100"
+        ]
+    }
+}
