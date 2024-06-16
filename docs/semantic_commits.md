@@ -43,4 +43,3 @@ you should prefer them.
 
 -   **docs**: Documentation-only changes. This includes updates to README files, inline
     documentation, or other project documentation.
-
