@@ -1,12 +1,9 @@
 # Semantic Commits
 
 Here are the descriptions for each of the semantic commit types. They are written in the order that
-you should prefer them. For example, docs comes first because any file can contain comments.
+you should prefer them.
 
 ## Changes to non-application areas
-
--   **docs**: Documentation-only changes. This includes updates to README files, inline
-    documentation, or other project documentation.
 
 -   **build**: Changes that affect the build system or external dependencies. Examples include
     updates to build tools like gulp, broccoli, or npm or updates to package versions.
@@ -41,3 +38,9 @@ you should prefer them. For example, docs comes first because any file can conta
 
 -   **revert**: Reverts a previous commit. This type of commit undoes changes made by a previous
     commit.
+
+## Changes to documentation
+
+-   **docs**: Documentation-only changes. This includes updates to README files, inline
+    documentation, or other project documentation.
+
