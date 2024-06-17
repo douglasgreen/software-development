@@ -1,6 +1,4 @@
-# Entropy
-
-## Programming languages
+# Programming Language Entropy
 
 Programming languages have bad entropy. The problems are:
 
