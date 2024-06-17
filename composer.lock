@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/douglasgreen/config-setup.git",
-                "reference": "e9815226d8fa9d27d91f0fc292dfda36b4349add"
+                "reference": "20c2b72bc68027109de7cfdd1bdc72af76c1d6cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/e9815226d8fa9d27d91f0fc292dfda36b4349add",
-                "reference": "e9815226d8fa9d27d91f0fc292dfda36b4349add",
+                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/20c2b72bc68027109de7cfdd1bdc72af76c1d6cf",
+                "reference": "20c2b72bc68027109de7cfdd1bdc72af76c1d6cf",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +83,7 @@
                 "source": "https://github.com/douglasgreen/config-setup/tree/main",
                 "issues": "https://github.com/douglasgreen/config-setup/issues"
             },
-            "time": "2024-06-15T18:50:48+00:00"
+            "time": "2024-06-17T12:27:23+00:00"
         }
     ],
     "aliases": [],
