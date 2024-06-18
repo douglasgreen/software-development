@@ -9,6 +9,6 @@ Here are some stereotypical meanings for function names.
 -   hasX - possesses X
 -   isX - has property X
 -   loadX - load a file
+-   mustX - do X or error
 -   saveX - save a file
 -   setX - set an object property
--   mustX - do X or error
