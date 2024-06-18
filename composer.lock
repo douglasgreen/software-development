@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/douglasgreen/config-setup.git",
-                "reference": "848fd9672d1949d61b22d270c16ca5e4acd24970"
+                "reference": "e1b5f49baa7fd79412a60367cc25333abf496073"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/848fd9672d1949d61b22d270c16ca5e4acd24970",
-                "reference": "848fd9672d1949d61b22d270c16ca5e4acd24970",
+                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/e1b5f49baa7fd79412a60367cc25333abf496073",
+                "reference": "e1b5f49baa7fd79412a60367cc25333abf496073",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +83,7 @@
                 "source": "https://github.com/douglasgreen/config-setup/tree/main",
                 "issues": "https://github.com/douglasgreen/config-setup/issues"
             },
-            "time": "2024-06-17T20:54:21+00:00"
+            "time": "2024-06-18T13:02:39+00:00"
         },
         {
             "name": "nette/neon",
