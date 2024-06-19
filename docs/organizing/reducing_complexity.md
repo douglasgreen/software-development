@@ -24,9 +24,10 @@ statement constructs but cannot determine if those constructs are essential.
 As a result, its typical solution of moving constructs into different functions does not actually
 reduce the overall complexity; it merely redistributes it.
 
-## Function Boundaries
+## Measuring Across Function Boundaries
 
-Splitting `if` statements into separate functions doesn't necessarily make the code simpler.
+We can use `if` statements in a function as an example of failing to reduce complexity. Splitting
+`if` statements into separate functions doesn't necessarily make the code simpler.
 
 Consider a single function with 10 `if` statements. This function has \(2^{10} = 1024\) possible
 outcomes. Now, if you split it into two functions with five `if` statements each, each function
