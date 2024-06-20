@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/douglasgreen/config-setup.git",
-                "reference": "e1b5f49baa7fd79412a60367cc25333abf496073"
+                "reference": "b9422bb3662b14f94aef6a5c7a20e251564a05db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/e1b5f49baa7fd79412a60367cc25333abf496073",
-                "reference": "e1b5f49baa7fd79412a60367cc25333abf496073",
+                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/b9422bb3662b14f94aef6a5c7a20e251564a05db",
+                "reference": "b9422bb3662b14f94aef6a5c7a20e251564a05db",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
                 "phpmd/phpmd": "^2.15",
                 "phpstan/phpstan": "^1.10",
                 "rector/rector": "^1.0",
-                "symplify/easy-coding-standard": "^12.2"
+                "symplify/easy-coding-standard": "^12.3"
             },
             "default-branch": true,
             "type": "library",
@@ -41,9 +41,9 @@
             "scripts": {
                 "lint": [
                     "ecs",
-                    "rector --dry-run",
-                    "./run_phpmd.sh",
-                    "./run_phpstan.sh"
+                    "phpstan analyse",
+                    "phpmd --cache --cache-file var/cache/phpmd/cache.php . text phpmd.xml",
+                    "rector --dry-run"
                 ],
                 "lint:fix": [
                     "ecs --fix",
@@ -83,20 +83,20 @@
                 "source": "https://github.com/douglasgreen/config-setup/tree/main",
                 "issues": "https://github.com/douglasgreen/config-setup/issues"
             },
-            "time": "2024-06-18T13:02:39+00:00"
+            "time": "2024-06-20T19:20:43+00:00"
         },
         {
             "name": "nette/neon",
-            "version": "v3.4.1",
+            "version": "v3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/neon.git",
-                "reference": "457bfbf0560f600b30d9df4233af382a478bb44d"
+                "reference": "0edcee11ca631af369180d9f3bc9615ea0cb2dfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/neon/zipball/457bfbf0560f600b30d9df4233af382a478bb44d",
-                "reference": "457bfbf0560f600b30d9df4233af382a478bb44d",
+                "url": "https://api.github.com/repos/nette/neon/zipball/0edcee11ca631af369180d9f3bc9615ea0cb2dfb",
+                "reference": "0edcee11ca631af369180d9f3bc9615ea0cb2dfb",
                 "shasum": ""
             },
             "require": {
@@ -149,9 +149,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/neon/issues",
-                "source": "https://github.com/nette/neon/tree/v3.4.1"
+                "source": "https://github.com/nette/neon/tree/v3.4.2"
             },
-            "time": "2023-09-27T08:59:11+00:00"
+            "time": "2024-06-18T21:02:21+00:00"
         }
     ],
     "aliases": [],
