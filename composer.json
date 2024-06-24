@@ -3,10 +3,19 @@
     "description": "Notes on software development",
     "license": "MIT",
     "type": "project",
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/douglasgreen/config-setup"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/douglasgreen/php-linter"
         }
     ],
     "require": {
@@ -16,7 +25,7 @@
         "douglasgreen/config-setup": "dev-main"
     },
     "scripts": {
-        "post-install-cmd": "vendor/douglasgreen/config-setup/bin/copy_files.php",
-        "post-update-cmd": "vendor/douglasgreen/config-setup/bin/copy_files.php"
+        "post-install-cmd": "config-setup",
+        "post-update-cmd": "config-setup"
     }
 }
