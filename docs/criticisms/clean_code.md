@@ -111,7 +111,7 @@ considerations.
 
 In conclusion, don't assume that Clean Code always gives good advice and don't follow it blindly.
 Your efforts to clean up your code should mainly focus on the meaning of the code and not on
-superficial syntactic manipulation. Ultimately, clean code is readable and meaningful code. Your code
-will be clean when you spend time to clean up its first draft quality and think carefully about the
-best ways to organize and express it. It also becomes clean through unit testing and widespread
+superficial syntactic manipulation. Ultimately, clean code is readable and meaningful code. Your
+code will be clean when you spend time to clean up its first draft quality and think carefully about
+the best ways to organize and express it. It also becomes clean through unit testing and widespread
 application by actual users who find its flaws. There isn't any shortcut to clean code.
