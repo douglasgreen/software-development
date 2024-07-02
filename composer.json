@@ -8,17 +8,11 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/douglasgreen/config-setup"
-        }
-    ],
     "require": {
         "php": ">=8.1"
     },
     "require-dev": {
-        "douglasgreen/config-setup": "dev-main"
+        "douglasgreen/utility": "dev-main"
     },
     "scripts": {
         "post-install-cmd": "config-setup --pre-commit",

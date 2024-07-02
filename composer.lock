@@ -4,270 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccc3f5f67cf6298f38e68b49bfd24ad7",
+    "content-hash": "b8a2ce2c195fc8dc7a276a44124aee05",
     "packages": [],
     "packages-dev": [
-        {
-            "name": "douglasgreen/config-setup",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/douglasgreen/config-setup.git",
-                "reference": "d56597584cbd8d4c85d99d33b07a26da8adf3459"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/d56597584cbd8d4c85d99d33b07a26da8adf3459",
-                "reference": "d56597584cbd8d4c85d99d33b07a26da8adf3459",
-                "shasum": ""
-            },
-            "require": {
-                "douglasgreen/php-linter": "dev-main",
-                "douglasgreen/utility": "dev-main",
-                "nette/neon": "^3.4",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^1.11",
-                "rector/rector": "^1.1",
-                "symplify/easy-coding-standard": "^12.3"
-            },
-            "default-branch": true,
-            "bin": [
-                "bin/config-setup"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DouglasGreen\\ConfigSetup\\": "src/"
-                }
-            },
-            "scripts": {
-                "lint": [
-                    "ecs",
-                    "php-linter",
-                    "phpstan analyse",
-                    "rector --dry-run"
-                ],
-                "lint:fix": [
-                    "ecs --fix",
-                    "rector"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Douglas Green",
-                    "email": "douglas@nurd.site",
-                    "homepage": "https://nurd.site/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Preconfigured setup files for linting, fixing, and testing PHP and JavaScript projects",
-            "homepage": "https://github.com/douglasgreen/config-setup",
-            "keywords": [
-                "automation",
-                "ci-cd",
-                "code-quality",
-                "coding-standards",
-                "composer",
-                "config",
-                "fixing",
-                "linting",
-                "php",
-                "php-cs-fixer",
-                "phpcs",
-                "phpunit",
-                "static-analysis",
-                "testing"
-            ],
-            "support": {
-                "source": "https://github.com/douglasgreen/config-setup/tree/main",
-                "issues": "https://github.com/douglasgreen/config-setup/issues"
-            },
-            "time": "2024-07-01T13:49:11+00:00"
-        },
-        {
-            "name": "douglasgreen/optparser",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/douglasgreen/optparser.git",
-                "reference": "05b37f3cbfe47a61cb44a3b3ecabbec3462b354f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/douglasgreen/optparser/zipball/05b37f3cbfe47a61cb44a3b3ecabbec3462b354f",
-                "reference": "05b37f3cbfe47a61cb44a3b3ecabbec3462b354f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "douglasgreen/config-setup": "dev-main",
-                "douglasgreen/php-linter": "dev-main",
-                "douglasgreen/utility": "dev-main",
-                "phpstan/phpstan": "^1.11",
-                "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.1",
-                "symplify/easy-coding-standard": "^12.3"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DouglasGreen\\OptParser\\": "src/",
-                    "DouglasGreen\\OptParser\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Douglas Green",
-                    "email": "douglas@nurd.site",
-                    "homepage": "https://nurd.site/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Parser for command-line options in PHP programs",
-            "homepage": "https://github.com/douglasgreen/optparser",
-            "keywords": [
-                "CLI Tool",
-                "automation",
-                "cli",
-                "cli library",
-                "command",
-                "command line",
-                "command-line interface",
-                "command-line utility",
-                "console",
-                "php",
-                "php automation",
-                "php cli",
-                "php command line",
-                "php console application",
-                "php scripting",
-                "scripting",
-                "terminal"
-            ],
-            "support": {
-                "issues": "https://github.com/douglasgreen/optparser/issues",
-                "source": "https://github.com/douglasgreen/optparser/tree/main"
-            },
-            "time": "2024-07-01T13:49:29+00:00"
-        },
-        {
-            "name": "douglasgreen/php-linter",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/douglasgreen/php-linter.git",
-                "reference": "64380cf133a5c3fd7095f9ef89f2b543111c3062"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/douglasgreen/php-linter/zipball/64380cf133a5c3fd7095f9ef89f2b543111c3062",
-                "reference": "64380cf133a5c3fd7095f9ef89f2b543111c3062",
-                "shasum": ""
-            },
-            "require": {
-                "douglasgreen/optparser": "dev-main",
-                "douglasgreen/utility": "dev-main",
-                "nikic/php-parser": "^5.0",
-                "pdepend/pdepend": "^2.16",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "douglasgreen/config-setup": "dev-main",
-                "phpstan/phpstan": "^1.11",
-                "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.1",
-                "symplify/easy-coding-standard": "^12.3"
-            },
-            "default-branch": true,
-            "bin": [
-                "bin/check-metrics",
-                "bin/check-style",
-                "bin/generate-metrics",
-                "bin/php-linter"
-            ],
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "DouglasGreen\\PhpLinter\\": "src/",
-                    "DouglasGreen\\PhpLinter\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Douglas Green",
-                    "email": "douglas@nurd.site",
-                    "homepage": "https://nurd.site/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Linter for PHP",
-            "homepage": "https://github.com/douglasgreen/php-linter",
-            "keywords": [
-                "ast",
-                "code quality",
-                "code standards",
-                "code validation",
-                "linter",
-                "php",
-                "php parser",
-                "php-fig",
-                "psr",
-                "static analysis",
-                "syntax check"
-            ],
-            "support": {
-                "issues": "https://github.com/douglasgreen/php-linter/issues",
-                "source": "https://github.com/douglasgreen/php-linter/tree/main"
-            },
-            "time": "2024-07-01T13:48:34+00:00"
-        },
         {
             "name": "douglasgreen/utility",
             "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/douglasgreen/utility.git",
-                "reference": "341c4eb6359c5a2b6419c42246c7e07b157029b0"
+                "reference": "96ffc7e5f2492dc1d4f7f74b6062b72b9e4a2712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/douglasgreen/utility/zipball/341c4eb6359c5a2b6419c42246c7e07b157029b0",
-                "reference": "341c4eb6359c5a2b6419c42246c7e07b157029b0",
+                "url": "https://api.github.com/repos/douglasgreen/utility/zipball/96ffc7e5f2492dc1d4f7f74b6062b72b9e4a2712",
+                "reference": "96ffc7e5f2492dc1d4f7f74b6062b72b9e4a2712",
                 "shasum": ""
             },
             "require": {
+                "nette/neon": "^3.4",
+                "nikic/php-parser": "^5.1",
+                "pdepend/pdepend": "^2.16",
                 "php": ">=8.1"
             },
             "require-dev": {
-                "douglasgreen/config-setup": "dev-main",
-                "douglasgreen/php-linter": "dev-main",
                 "phpstan/phpstan": "^1.11",
                 "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.1",
+                "rector/rector": "^1.2",
                 "symplify/easy-coding-standard": "^12.3"
             },
             "default-branch": true,
+            "bin": [
+                "bin/config-setup",
+                "bin/check-metrics",
+                "bin/check-style",
+                "bin/generate-metrics",
+                "bin/php-linter"
+            ],
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "DouglasGreen\\Utility\\": "src/",
-                    "DouglasGreen\\Utility\\Tests\\": "tests/"
+                    "DouglasGreen\\Utility\\": "src/Utility",
+                    "DouglasGreen\\OptParser\\": "src/OptParser",
+                    "DouglasGreen\\PhpLinter\\": "src/PhpLinter",
+                    "DouglasGreen\\ConfigSetup\\": "src/ConfigSetup"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -282,14 +62,50 @@
                     "role": "Developer"
                 }
             ],
-            "description": "A PHP utility project for exception classes and wrapper functions",
+            "description": "PHP utility project that combines CLI option parser, config setup, php linting, and utility classes",
             "homepage": "https://github.com/douglasgreen/utility",
             "keywords": [
+                "CLI Tool",
+                "ast",
+                "automation",
+                "ci cd",
+                "cli",
+                "cli library",
+                "code quality",
+                "code standards",
+                "code validation",
+                "coding standards",
+                "command",
+                "command line",
+                "command-line interface",
+                "command-line utility",
+                "composer",
+                "config",
+                "console",
                 "directory",
                 "exceptions",
                 "file",
+                "fixing",
+                "linter",
+                "linting",
                 "php",
+                "php automation",
+                "php cli",
+                "php command line",
+                "php console application",
+                "php cs fixer",
+                "php fig",
+                "php parser",
+                "php scripting",
+                "phpcs",
+                "phpunit",
+                "psr",
                 "regex",
+                "scripting",
+                "static analysis",
+                "syntax check",
+                "terminal",
+                "testing",
                 "utility",
                 "wrapper"
             ],
@@ -297,7 +113,7 @@
                 "issues": "https://github.com/douglasgreen/utility/issues",
                 "source": "https://github.com/douglasgreen/utility/tree/main"
             },
-            "time": "2024-07-01T12:03:21+00:00"
+            "time": "2024-07-02T17:56:09+00:00"
         },
         {
             "name": "nette/neon",
@@ -369,16 +185,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.0.2",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13"
+                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/139676794dc1e9231bf7bcd123cfc0c99182cb13",
-                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/683130c2ff8c2739f4822ff7ac5c873ec529abd1",
+                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1",
                 "shasum": ""
             },
             "require": {
@@ -389,7 +205,7 @@
             },
             "require-dev": {
                 "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^9.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -421,9 +237,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.2"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.1.0"
             },
-            "time": "2024-03-05T20:51:40+00:00"
+            "time": "2024-07-01T20:03:41+00:00"
         },
         {
             "name": "pdepend/pdepend",
@@ -1151,7 +967,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "douglasgreen/config-setup": 20
+        "douglasgreen/utility": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
