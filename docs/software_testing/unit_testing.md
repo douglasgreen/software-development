@@ -78,4 +78,9 @@ In summary, as you design your software, ensure that it's structured in a way th
 testing feasible and straightforward. This not only enhances the quality of your software but also
 makes future maintenance and debugging more efficient.
 
+## Refactoring for Unit Tests
+
+1. Use [php-mock](https://github.com/php-mock/php-mock) to mock global functions.
+2. Use dependency injection for objects or provide a getter than can be used to mock the object. 
+
 <!-- DSG/ChatGPT 8/1/2023 -->
