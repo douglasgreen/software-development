@@ -1,21 +1,27 @@
 {
     "name": "douglasgreen/software-development",
     "description": "Notes on software development",
-    "license": "MIT",
     "type": "project",
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "license": "MIT",
     "require": {
         "php": ">=8.1"
     },
     "require-dev": {
-        "douglasgreen/utility": "dev-main"
+        "douglasgreen/config-setup": "dev-main"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/douglasgreen/config-setup"
+        }
+    ],
+    "config": {
+        "sort-packages": true
     },
     "scripts": {
-        "post-install-cmd": "config-setup --pre-commit",
-        "post-update-cmd": "config-setup --pre-commit"
+        "post-install-cmd": "config-setup",
+        "post-update-cmd": "config-setup"
     }
 }

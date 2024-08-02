@@ -81,6 +81,6 @@ makes future maintenance and debugging more efficient.
 ## Refactoring for Unit Tests
 
 1. Use [php-mock](https://github.com/php-mock/php-mock) to mock global functions.
-2. Use dependency injection for objects or provide a getter than can be used to mock the object. 
+2. Use dependency injection for objects or provide a getter than can be used to mock the object.
 
 <!-- DSG/ChatGPT 8/1/2023 -->
