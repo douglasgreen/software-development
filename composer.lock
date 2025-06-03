@@ -13,25 +13,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/douglasgreen/config-setup.git",
-                "reference": "79dba7e81d4103b832d9bf8bde5db7acb28989b3"
+                "reference": "bcd2dff4364eb0b981e231966bcab144a329174d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/79dba7e81d4103b832d9bf8bde5db7acb28989b3",
-                "reference": "79dba7e81d4103b832d9bf8bde5db7acb28989b3",
+                "url": "https://api.github.com/repos/douglasgreen/config-setup/zipball/bcd2dff4364eb0b981e231966bcab144a329174d",
+                "reference": "bcd2dff4364eb0b981e231966bcab144a329174d",
                 "shasum": ""
             },
             "require": {
                 "nette/neon": "^3.4",
-                "php": ">=8.1"
+                "php": ">=8.2"
             },
             "require-dev": {
-                "phpstan/phpstan": "^1.11",
-                "rector/rector": "^1.2",
-                "symplify/easy-coding-standard": "^12.3"
+                "phpstan/phpstan": "^2.1",
+                "rector/rector": "^2.0",
+                "symplify/easy-coding-standard": "^12.5"
             },
             "default-branch": true,
-            "bin": ["bin/config-setup", "bin/sort-composer-json"],
+            "bin": [
+                "bin/check-composer-usage",
+                "bin/config-setup",
+                "bin/sort-composer-json"
+            ],
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -39,10 +43,20 @@
                 }
             },
             "scripts": {
-                "lint": ["ecs", "phpstan analyse", "rector --dry-run"],
-                "lint:fix": ["ecs --fix", "rector", "sort-composer-json"]
+                "lint": [
+                    "ecs",
+                    "phpstan analyse",
+                    "rector --dry-run"
+                ],
+                "lint:fix": [
+                    "ecs --fix",
+                    "rector",
+                    "sort-composer-json"
+                ]
             },
-            "license": ["MIT"],
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
                     "name": "Douglas Green",
@@ -69,32 +83,34 @@
                 "source": "https://github.com/douglasgreen/config-setup/tree/main",
                 "issues": "https://github.com/douglasgreen/config-setup/issues"
             },
-            "time": "2024-08-02T00:11:19+00:00"
+            "time": "2025-06-03T12:03:42+00:00"
         },
         {
             "name": "nette/neon",
-            "version": "v3.4.3",
+            "version": "v3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/neon.git",
-                "reference": "c8481c104431c8d94cc88424a1e21f47f8c93280"
+                "reference": "3411aa86b104e2d5b7e760da4600865ead963c3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/neon/zipball/c8481c104431c8d94cc88424a1e21f47f8c93280",
-                "reference": "c8481c104431c8d94cc88424a1e21f47f8c93280",
+                "url": "https://api.github.com/repos/nette/neon/zipball/3411aa86b104e2d5b7e760da4600865ead963c3c",
+                "reference": "3411aa86b104e2d5b7e760da4600865ead963c3c",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "8.0 - 8.3"
+                "php": "8.0 - 8.4"
             },
             "require-dev": {
                 "nette/tester": "^2.4",
                 "phpstan/phpstan": "^1.0",
                 "tracy/tracy": "^2.7"
             },
-            "bin": ["bin/neon-lint"],
+            "bin": [
+                "bin/neon-lint"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -102,10 +118,16 @@
                 }
             },
             "autoload": {
-                "classmap": ["src/"]
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "license": ["BSD-3-Clause", "GPL-2.0-only", "GPL-3.0-only"],
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0-only",
+                "GPL-3.0-only"
+            ],
             "authors": [
                 {
                     "name": "David Grudl",
@@ -118,12 +140,18 @@
             ],
             "description": "🍸 Nette NEON: encodes and decodes NEON file format.",
             "homepage": "https://ne-on.org",
-            "keywords": ["export", "import", "neon", "nette", "yaml"],
+            "keywords": [
+                "export",
+                "import",
+                "neon",
+                "nette",
+                "yaml"
+            ],
             "support": {
                 "issues": "https://github.com/nette/neon/issues",
-                "source": "https://github.com/nette/neon/tree/v3.4.3"
+                "source": "https://github.com/nette/neon/tree/v3.4.4"
             },
-            "time": "2024-06-26T14:53:59+00:00"
+            "time": "2024-10-04T22:00:08+00:00"
         }
     ],
     "aliases": [],
@@ -137,5 +165,5 @@
         "php": ">=8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
