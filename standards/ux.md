@@ -405,7 +405,6 @@ When generating code using this stack:
 3. **JavaScript/jQuery:**
    - Use jQuery for DOM manipulation and AJAX with this stack
    - Prefer vanilla JS for modern features (fetch API acceptable)
-   - TypeScript for complex logic
    - Debounce search/autosave functions
 
 4. **PHP/MySQL:**
