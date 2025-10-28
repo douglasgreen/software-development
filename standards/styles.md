@@ -1,4 +1,4 @@
-# Web Application CSS Design Standards
+# Style Standards
 
 ## Introduction
 
