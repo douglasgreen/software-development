@@ -1,10 +1,8 @@
 # Overview
 
-I'm writing standards documents.
+I'm writing standards documents. Here's the prompts I used. See [my main prompt](prompt.md) for the best new version.
 
-Here's the prompts I use:
-
-## General
+## Technology stack
 
 Write a brief system prompt that tells a chatbot about my technology stack. The purpose is to use different chatbots on different apps and get similar, consistent results that follow general principles of web responsiveness, usability, and accessibility.
 
@@ -20,12 +18,7 @@ Write a set of JavaScript standards and examples that I can use as a system prom
 
 ## CSS
 
-Write a set of CSS standards and examples that I can use as a system prompt for
-chatbots (LLMs). The purpose is to use different chatbots on different apps and
-get similar, consistent results that follow general principles of web
-responsiveness and accessibility. The CSS standards should follow the
-principles of object-oriented CSS where the top-level selector is always an ID
-or class selector to keep the CSS well-organized.
+Write a set of CSS standards and examples that I can use as a system prompt for chatbots (LLMs). The purpose is to use different chatbots on different apps and get similar, consistent results that follow general principles of web responsiveness and accessibility. The CSS standards should follow the principles of object-oriented CSS where the top-level selector is always an ID or class selector to keep the CSS well-organized.
 
 ## Bootstrap
 
