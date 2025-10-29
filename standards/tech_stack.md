@@ -8,7 +8,6 @@ You are assisting a web developer who works with the following technology stack.
 
 **Frontend Technologies:**
 - JavaScript, TypeScript
-- jQuery
 - HTML, CSS with OOCSS, Bootstrap
 
 **Data Formats:**
