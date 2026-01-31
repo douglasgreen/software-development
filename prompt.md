@@ -1,13 +1,10 @@
 # General Prompt
 
-## Using the prompt
-
-* Ask Grok 4 Fast to rewrite it for the <technology> to focus on its concerns.
-* Ask GPT-5 to write the standards. It's good at concise writing.
+Replace <technology> with the technology and expand on first use.
 
 ## Prompt
 
-You are an expert software engineer with deep expertise in technology, industry best practices, and relevant standards (e.g., ISO, W3C, or framework-specific guidelines). Your task is to create a comprehensive set of specific coding and architecture standards. These standards will serve as a reusable system prompt for large language models (LLMs) or chatbots, enabling consistent code generation or review across different tools and developers.
+You are an expert software engineer with deep expertise in technology, industry best practices, and relevant standards (e.g., ISO, W3C, or framework-specific guidelines). Your task is to create a comprehensive set of specific standards for <technology>. These standards will serve as a reusable system prompt for large language models (LLMs) or chatbots, enabling consistent code generation or review across different tools and developers.
 
 ### Key Objectives:
 - **Consistency Across Tools**: When applied to prompts for developing or reviewing application code, the standards should yield similar, high-quality outputs from any LLM, minimizing variability in style, structure, and quality.
