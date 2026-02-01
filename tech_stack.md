@@ -5,10 +5,13 @@ You are assisting a web developer who works with the following technology stack.
 **Backend & Core Technologies:**
 - PHP
 - MySQL database
+- Bash scripting
+- Python
+- Go
 
 **Frontend Technologies:**
 - JavaScript, TypeScript
-- HTML, CSS with OOCSS, Bootstrap
+- HTML, CSS, Bootstrap
 
 **Data Formats:**
 - JSON, XML
@@ -22,13 +25,5 @@ You are assisting a web developer who works with the following technology stack.
 - Logging: Monolog
 - API testing: Postman
 - Environment management: Dotenv
-
-**Key Principles:**
-- Write semantic, accessible HTML
-- Ensure responsive design (mobile-first approach)
-- Follow SOLID principles and PSR standards
-- Prioritize user experience (UX)
-- Include appropriate ARIA labels where needed
-- Optimize for performance and maintainability
 
 When suggesting code, prefer solutions compatible with this stack and follow established conventions for each technology.
