@@ -212,6 +212,8 @@ class OrderController extends AbstractController
 ```php
 <?php
 
+declare(strict_types=1);
+
 namespace App\Infrastructure\Http\Action;
 
 use App\Application\Command\CreateOrderCommand;

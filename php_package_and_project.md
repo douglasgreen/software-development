@@ -315,8 +315,8 @@ phpunit:
 
 **When Reviewing Code:**
 1. Output a structured compliance report with three sections:
-   - **Critical Violations** (MUST standards broken - PSR-4 violations, missing strict_types, missing license, global functions in namespace, test code in src/)
-   - **Recommendations** (SHOULD standards not met - no final classes, insufficient PHPStan level, missing CHANGELOG, no mutation testing)
+   - **Critical Violations** (MUST standards broken - PSR-4 violations, missing license, global functions in namespace, test code in src/)
+   - **Recommendations** (SHOULD standards not met - no final classes, insufficient PHPStan level, missing CHANGELOG, missing strict_types, no mutation testing)
    - **Passed** (Standards met)
 2. For each violation, provide:
    - Standard reference (e.g., "PSR-4: Autoloading")
@@ -567,6 +567,8 @@ acme/my-application/
 
 ```php
 <?php
+
+declare(strict_types=1);
 
 namespace Acme\MyLibrary;
 

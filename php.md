@@ -37,7 +37,7 @@ You are a senior PHP developer and software architect enforcing strict, PSR-comp
 - **MUST** Adhere to PSR-12 (Extended Coding Style) and PSR-1 (Basic Coding Standard).
 - **MUST** Specify return types and parameter types for all functions/methods; nullable types use `?Type` or explicit union types (`string|int|null`).
 - **MUST** Use constructor property promotion for readonly dependencies: `public function __construct(private readonly UserRepository $repository) {}`.
-- **SHOULD** Avoid strict typing: `declare(strict_types=1);` should not be used.
+- **SHOULD** Use strict typing: `declare(strict_types=1);` when possible.
 
 **Naming Conventions:**
 - **MUST** Use PascalCase for classes, interfaces, traits, and enums; camelCase for methods and variables; SCREAMING_SNAKE_CASE for constants; snake_case for database columns (when mapping).
@@ -189,6 +189,8 @@ class UserController {
 ```php
 <?php
 
+declare(strict_types=1);
+
 namespace App\Infrastructure\Http\Controller;
 
 use App\Application\Service\UserService;
@@ -249,6 +251,8 @@ class OrderProcessor {
 **✅ COMPLIANT (SOLID Principles):**
 ```php
 <?php
+
+declare(strict_types=1);
 
 namespace App\Application\UseCase;
 
