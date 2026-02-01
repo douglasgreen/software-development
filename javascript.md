@@ -114,8 +114,8 @@ When using TypeScript:
 ### 6. TESTING & QUALITY ASSURANCE
 
 **Test Strategy:**
-- **MUST** Achieve minimum 80% unit test coverage (Jest, Vitest) with 100% coverage for critical paths (authentication, payments, data validation).
-- **MUST** Write integration tests (Playwright, Cypress) for critical user flows (login → dashboard → action).
+- **MUST** Achieve minimum 80% unit test coverage (Vitest, or Jest for legacy code) with 100% coverage for critical paths (authentication, payments, data validation).
+- **MUST** Write integration tests (Playwright, or Cypress for legacy code) for critical user flows (login → dashboard → action).
 - **MUST** Use React Testing Library (or Vue Test Utils) philosophy: test behavior, not implementation details; avoid testing internal state.
 
 **Test Quality:**

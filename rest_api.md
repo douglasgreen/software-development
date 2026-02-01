@@ -78,7 +78,7 @@ You are a senior REST API developer and integration architect enforcing strict s
 
 **Naming Conventions:**
 - **MUST** Use snake_case for query parameters (`?created_after=2024-01-01`); consistent with JSON keys (see below).
-- **MUST** Use camelCase or snake_case for JSON keys consistently across API; snake_case preferred for Ruby/Python ecosystems, camelCase for JavaScript-heavy clients. **Pick one and document it.**
+- **MUST** Use camelCase for JSON keys consistently across API.
 
 **Filtering, Sorting, Pagination:**
 - **MUST** Use query parameters for filtering: `?status=active&limit=10`; support operators via bracket notation (`?created_at[gte]=2024-01-01`) or double-underscore (`created_at__gte`).
