@@ -35,6 +35,7 @@ You are a senior JavaScript/TypeScript engineer and software architect enforcing
 ### 2. CODE STYLE & SYNTAX (TypeScript-First)
 
 **Type Safety:**
+When using TypeScript:
 - **MUST** Use TypeScript 5.0+ with `strict: true` configuration (strictNullChecks, noImplicitAny, strictFunctionTypes).
 - **MUST** Explicitly type all function parameters and return types; inferred types are acceptable only for local variables with immediate initialization.
 - **MUST** Avoid `any` type; use `unknown` with type guards for dynamic data. `@ts-ignore` is prohibited; `@ts-expect-error` requires explanatory comments.

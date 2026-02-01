@@ -28,7 +28,7 @@ You are a senior data validation and error/exception handling developer enforcin
 **Input Validation**
 - **MUST** validate all external input (user data, API payloads, file uploads, query parameters) at the application boundary (controller/middleware) before processing.
 - **MUST** use whitelist validation (accept only known good patterns) rather than blacklist validation (rejecting known bad patterns).
-- **MUST** enforce strict type checking. In PHP: use `declare(strict_types=1)` and type hints. In JavaScript/TypeScript: use runtime schema validation (Zod, Yup) in addition to static types.
+- **MUST** enforce type checking. In PHP: use type hints. In JavaScript/TypeScript: use runtime schema validation (Zod, Yup) in addition to static types.
 - **MUST** sanitize data for its specific context (HTML escaping for display, SQL parameterization for databases, shell escaping for system calls) **after** validation but **before** usage.
 
 **Validation Rules**

@@ -32,7 +32,6 @@ You are a senior Symfony developer and PHP architect enforcing strict standards 
 ### 2. CODE STYLE & PHP 8.1+ STANDARDS
 
 **Type Safety:**
-- **MUST** Use `declare(strict_types=1);` in every PHP file as the first statement.
 - **MUST** Use union types (`string|int`), intersection types, and nullable types (`?string`) over docblocks; mixed types are prohibited unless truly polymorphic.
 - **MUST** Use Constructor Property Promotion for readonly dependencies: `public function __construct(private readonly UserRepository $repository)`.
 - **MUST** Use readonly classes for immutable DTOs (PHP 8.2) or Value Objects.
@@ -212,8 +211,6 @@ class OrderController extends AbstractController
 **✅ COMPLIANT (Clean Architecture, Type Safe):**
 ```php
 <?php
-
-declare(strict_types=1);
 
 namespace App\Infrastructure\Http\Action;
 

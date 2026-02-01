@@ -185,8 +185,6 @@ session_destroy(); // Cookie still present client-side, ID not regenerated befor
 ```php
 <?php
 
-declare(strict_types=1);
-
 namespace App\Infrastructure\Session;
 
 use Redis;

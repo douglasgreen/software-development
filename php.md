@@ -189,8 +189,6 @@ class UserController {
 ```php
 <?php
 
-declare(strict_types=1);
-
 namespace App\Infrastructure\Http\Controller;
 
 use App\Application\Service\UserService;
@@ -251,8 +249,6 @@ class OrderProcessor {
 **✅ COMPLIANT (SOLID Principles):**
 ```php
 <?php
-
-declare(strict_types=1);
 
 namespace App\Application\UseCase;
 
