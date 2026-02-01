@@ -119,9 +119,9 @@ You are a senior PHPDoc developer and documentation architect enforcing strict s
 
 **Class-Level:**
 - **MUST** Document class responsibility (single sentence summary) and complex invariants.
-- **MUST** Use `@author` only when individual authorship is organizationally significant (otherwise use version control).
 - **MUST** Document `@template` declarations at class level for generic repositories, collections, services.
 - **MUST** Use `@property` and `@method` for magic properties/methods accessed via `__get`/`__call`: `@property-read string $name`.
+- **SHOULD** Use `@author` only when individual authorship is organizationally significant (otherwise use version control).
 - **SHOULD** Include usage examples for complex classes in description.
 
 **Constants:**

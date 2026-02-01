@@ -15,19 +15,28 @@ You are a senior PHP package developer and library architect enforcing strict st
 - **MUST** Use standard directory structure:
   ```
   package-name/
-  ├── bin/                 # Executible script files
-  ├── src/                 # Production code (PSR-4: Vendor\Package\)
-  ├── tests/               # Test suites (PHPUnit, PSR-4: Vendor\Package\Tests\)
-  ├── config/              # Configuration files (if applicable)
-  ├── resources/           # Non-PHP assets (templates, schemas)
-  ├── .github/             # Workflows, funding, security policy
-  ├── CHANGELOG.md         # Keep a Changelog format (https://keepachangelog.com/)
-  ├── LICENSE              # SPDX identifier (MIT, Apache-2.0, etc.)
-  ├── README.md            # Installation, usage, API docs
-  ├── composer.json        # PSR-4 autoloading, strict version constraints
-  ├── phpunit.xml.dist     # PHPUnit configuration
-  └── psalm.xml / phpstan.neon # Static analysis config
+  ├── bin/                    # Executable CLI scripts (PHP)
+  ├── config/                 # Default configuration (PHP/array files)
+  ├── database/               # Database schemas, migrations, seeders (if ORM/DB package)
+  ├── public/                 # Web-accessible assets (entry point for bundles only)
+  ├── resources/              # Non-PHP source files (templates, schemas, raw assets)
+  │   ├── assets/             # Source JS/CSS/images before processing (src)
+  │   ├── dist/               # Compiled/optimized assets for distribution
+  │   ├── schemas/            # XSD, JSON Schema, XML validation files
+  │   ├── sql/                # Raw SQL schema files, dialect-specific subdirs
+  │   └── templates/          # Twig, Blade, Plates templates (namespaced)
+  ├── src/                    # Production PHP code (PSR-4)
+  ├── tests/                  # Test suites (PSR-4: Vendor\Package\Tests\)
+  ├── assets/                 # Alternative: Frontend source files (if build pipeline complex)
+  ├── .github/                # Workflows, security policy
+  ├── CHANGELOG.md
+  ├── LICENSE
+  ├── README.md
+  ├── composer.json
+  ├── phpunit.xml.dist
+  └── psalm.xml / phpstan.neon
   ```
+
 - **MUST** PSR-4 autoload root: `"src/"` mapped to namespace root (e.g., `"MyVendor\\MyPackage\\": "src/"`); no PSR-0, no classmap for new packages.
 - **MUST** Separate tests autoloading: `"MyVendor\\MyPackage\\Tests\\": "tests/"` under `autoload-dev` only.
 - **MUST** Production code in `src/`; no test files, no documentation generators, no CI scripts in `src/`.
@@ -45,6 +54,86 @@ You are a senior PHP package developer and library architect enforcing strict st
 - **MUST** Use singular nouns for namespaces (`Http\Middleware` not `Http\Middlewares`) except established conventions (`Tests`, `Resources`).
 
 ---
+
+#### 1.1 Asset & Schema File Organization
+
+**JavaScript & CSS Assets:**
+- **MUST** Place raw source files in `resources/assets/src/` (JS) or `resources/assets/css/` (CSS) when preprocessing is required.
+- **MUST** Place compiled/distributable files in `resources/dist/` or `public/` (for Symfony bundles requiring `assets:install`).
+- **MUST** Declare asset entry points in `composer.json` `extra` section for framework bridges:
+  ```json
+  "extra": {
+      "symfony": {
+          "assets": ["resources/dist"]
+      }
+  }
+  ```
+- **SHOULD** Use `assets/` at root level only if the package includes a complex Node.js build pipeline; otherwise prefer `resources/assets/`.
+- **MUST** Exclude source maps and node_modules from distribution via `.gitattributes` (`*.map export-ignore`, `node_modules/ export-ignore`).
+- **MUST NOT** commit compiled assets to version control **UNLESS** the package is a pure frontend-PHP bridge with no build step for consumers.
+
+**Twig Templates:**
+- **MUST** Place in `resources/templates/` using directory structure mirroring namespace logic: `resources/templates/forms/row.html.twig`.
+- **MUST** Register template namespace via bridge configuration (e.g., Symfony Bundle):
+  ```php
+  // Usage: @AcmePackage/forms/row.html.twig
+  $loader->addPath(__DIR__.'/../resources/templates', 'AcmePackage');
+  ```
+- **SHOULD** Use `.html.twig` extension explicitly; avoid `.twig` only.
+- **MUST** Prefix template names with package vendor to avoid collisions: `acme_package_` or use namespaced paths.
+
+**XML Schema & Validation Files:**
+- **MUST** Place XSD, DTD, RELAX NG files in `resources/schemas/` with version subdirectories if multiple API versions supported:
+  ```
+  resources/schemas/
+  ├── 1.0/
+  │   └── configuration.xsd
+  └── 2.0/
+      └── configuration.xsd
+  ```
+- **MUST** Reference schemas via relative path resolution using `__DIR__`, never hardcoded absolute paths:
+  ```php
+  $schemaPath = \dirname(__DIR__, 2) . '/resources/schemas/config.xsd';
+  ```
+- **SHOULD** Provide JSON Schema equivalents in `resources/schemas/json/` for modern validation pipelines.
+
+**SQL Schema Files:**
+- **MUST** Place in `resources/sql/` or `database/schemas/` (choose one consistently).
+- **MUST** Organize by database dialect when SQL varies:
+  ```
+  resources/sql/
+  ├── mysql/
+  │   ├── install.sql
+  │   └── upgrade-1.0-2.0.sql
+  ├── postgresql/
+  │   ├── install.sql
+  │   └── upgrade-1.0-2.0.sql
+  └── sqlite/
+      └── install.sql
+  ```
+- **MUST** Use versioned migration filenames: `V1__Initial_schema.sql` (Flyway style) or `001_initial_schema.sql`.
+- **SHOULD** Provide PHP migration wrappers in `database/migrations/` that execute SQL files for framework-agnostic migration runners.
+- **MUST NOT** execute SQL files directly during Composer autoload (no `post-autoload-dump` schema installation).
+
+**Configuration & Metadata Files:**
+- **MUST** Place YAML/XML config definitions in `config/definitions/` (XSD/XML) or `config/schemas/` (JSON Schema).
+- **MUST** Place routing definitions in `config/routes/` (symfony/laravel) with `php`, `yaml`, or `xml` subextensions.
+- **SHOULD** Provide XML and PHP configuration variants for Symfony bundles; XML in `config/xml/`, PHP in `config/php/`.
+
+**Distribution & Export Rules:**
+- **MUST** Configure `.gitattributes` to exclude development assets while preserving runtime necessities:
+  ```
+  /assets/src export-ignore        # Source TS/SCSS
+  /node_modules export-ignore      # NPM deps
+  /tests export-ignore             # Tests
+  /resources/dist/*.map export-ignore # Source maps
+  ```
+- **MUST** Use `composer-archive` exclusions to ensure `vendor/` packages don't include uncompiled assets:
+  ```json
+  "archive": {
+      "exclude": ["/assets/src", "/node_modules", "/tests"]
+  }
+  ```
 
 ### 2. COMPOSER & DEPENDENCY MANAGEMENT
 
@@ -99,6 +188,21 @@ You are a senior PHP package developer and library architect enforcing strict st
 **Configuration:**
 - **MUST** Use value objects or arrays with schema validation for configuration; never use global configuration singletons.
 - **MUST** Validate configuration at instantiation time (fail fast), not at usage time.
+
+**Resource Path API Contract:**
+- **MUST** Provide a public API method to locate package resources for framework integration:
+  ```php
+  final class Package
+  {
+      public static function getResourcePath(string $type, string $path): string
+      {
+          return \dirname(__DIR__) . '/resources/' . $type . '/' . $path;
+      }
+  }
+
+  // Usage: Package::getResourcePath('templates', 'form.html.twig');
+  // Usage: Package::getResourcePath('sql/mysql', 'install.sql');
+  ```
 
 ---
 
@@ -232,41 +336,44 @@ my-library/
 
 **✅ COMPLIANT (Modern PHP Package):**
 ```text
-my-library/
+acme/my-library/
 ├── .github/
 │   ├── workflows/
-│   │   └── ci.yml          # PHP 8.2-8.4 matrix, PHPStan, PHPUnit, CS-Fixer
-│   ├── SECURITY.md         # Security policy and reporting
-│   └── FUNDING.yml         # Sponsor links
-├── config/                 # Default configuration (if applicable)
-│   └── default.php
-├── examples/               # Runnable examples
+│   │   └── ci.yml              # PHP 8.2-8.4 matrix, PHPStan L9, PHPUnit, CS-Fixer
+│   ├── SECURITY.md             # MUST: Security policy and reporting
+│   └── FUNDING.yml             # Sponsor links
+├── config/                     # Configuration definitions
+│   └── default.php             # PHP array config (preferred over YAML for libs)
+├── examples/                   # MUST: Runnable examples
 │   └── basic_usage.php
-├── resources/              # Non-PHP assets
-│   └── schemas/
-│       └── schema.json
-├── src/                    # PSR-4: Acme\MyLibrary\
-│   ├── Contracts/          # Interfaces (public API)
-│   │   ├── FormatterInterface.php
-│   │   └── ParserInterface.php
-│   ├── Internal/           # Implementation details (@internal)
+├── resources/                  # MUST: Non-PHP assets
+│   ├── schemas/
+│   │   ├── xml/
+│   │   │   └── configuration.xsd
+│   │   └── json/
+│   │       └── configuration.json
+│   └── templates/
+│       └── form/               # MUST: Prefixed/namespaced paths
+│           └── row.html.twig   # MUST: .html.twig extension
+├── src/                        # MUST: PSR-4 root (Acme\MyLibrary\)
+│   ├── Contracts/              # MUST: Interfaces for public API
+│   │   └── FormatterInterface.php
+│   ├── Internal/               # MUST: Implementation details (@internal)
 │   │   └── Utils/
 │   │       └── StringHelper.php
-│   ├── Formatter.php       # final class implementing interface
-│   └── Parser.php
-├── tests/                  # PSR-4: Acme\MyLibrary\Tests\
+│   └── Formatter.php           # MUST: final class, strict_types
+├── tests/                      # MUST: PSR-4 (Acme\MyLibrary\Tests\)
 │   ├── Unit/
-│   │   ├── FormatterTest.php
-│   │   └── ParserTest.php
+│   │   └── FormatterTest.php   # Mirrors src/Formatter.php
 │   └── Fixture/
 │       └── data_provider.php
-├── CHANGELOG.md            # Keep a Changelog format
-├── LICENSE                 # MIT or Apache-2.0 full text
-├── README.md               # Badges, install, usage, API
-├── composer.json           # Strict PSR-4, PHP ^8.2, roave/security-advisories
-├── phpstan.neon.dist       # Level 9 (strict)
-├── phpunit.xml.dist        # Coverage settings
-└── psalm.xml               # Psalm level 1
+├── CHANGELOG.md                # MUST: Keep a Changelog format
+├── LICENSE                     # MUST: Full license text (MIT)
+├── README.md                   # MUST: Badges, requirements, usage
+├── composer.json               # MUST: Strict PSR-4, PHP ^8.2
+├── phpstan.neon.dist           # MUST: Level 8+ (recommend Level 9)
+├── phpunit.xml.dist            # MUST: Coverage settings
+└── .gitattributes              # MUST: Export-ignore rules
 ```
 
 ```json
@@ -274,8 +381,8 @@ my-library/
 {
   "name": "acme/my-library",
   "type": "library",
-  "description": "A modern PHP library for data formatting",
-  "keywords": ["formatter", "parser", "php"],
+  "description": "A modern PHP library for data formatting with strict type safety",
+  "keywords": ["formatter", "parser", "php", "strict-types"],
   "license": "MIT",
   "authors": [
     {
@@ -312,8 +419,9 @@ my-library/
     }
   },
   "scripts": {
-    "test": "phpunit",
-    "analyse": "phpstan analyse",
+    "test": "phpunit --colors=always",
+    "analyse": "phpstan analyse --configuration=phpstan.neon.dist",
+    "cs-check": "php-cs-fixer fix --dry-run --diff",
     "cs-fix": "php-cs-fixer fix"
   },
   "extra": {
@@ -324,17 +432,92 @@ my-library/
 }
 ```
 
+**❌ NON-COMPLIANT (Asset Chaos):**
+```text
+my-library/
+├── js/                     # Wrong: at root, not resources/assets/
+│   ├── script.js           # Wrong: unminified in root
+│   └── jquery.min.js       # Wrong: bundled vendor code (use npm)
+├── css/
+│   └── style.css
+├── views/                  # Wrong: ambiguous name, non-standard location
+│   └── template.twig       # Wrong: missing .html extension, vendor prefix
+├── schema.xsd              # Wrong: at root, not resources/schemas/
+├── install.sql             # Wrong: at root, dialect not specified
+└── src/
+```
+
+**✅ COMPLIANT (Full-Stack Bundle with Assets):**
+```text
+acme/dashboard-bundle/
+├── bin/
+│   └── dashboard-check.php         # CLI entry point
+├── config/
+│   ├── definitions/
+│   │   └── configuration.xsd       # MUST: XML schema validation
+│   ├── routes/
+│   │   └── dashboard.yaml          # MUST: Routing definitions
+│   └── services.xml                # MUST: Service definitions (XML)
+├── database/
+│   └── migrations/
+│       └── Version20241015120000.php  # MUST: DB migrations (Doctrine)
+├── public/                         # MUST: Web assets (assets:install target)
+│   ├── css/
+│   │   └── dashboard.min.css       # MUST: Compiled/minified only
+│   └── js/
+│       └── dashboard.min.js        # MUST: Compiled/minified only
+├── resources/
+│   ├── assets/
+│   │   ├── src/                    # MUST: Source TS/SCSS (not distributed)
+│   │   │   ├── components/
+│   │   │   │   └── Chart.ts
+│   │   │   └── dashboard.ts
+│   │   └── scss/
+│   │       └── dashboard.scss
+│   ├── schemas/
+│   │   ├── xml/
+│   │   │   └── widget-schema.xsd
+│   │   └── json/
+│   │       └── widget-schema.json  # SHOULD: JSON Schema equivalent
+│   ├── sql/
+│   │   └── mysql/
+│   │       ├── install.sql         # MUST: Dialect-specific
+│   │       └── upgrade-1.0-2.0.sql # MUST: Versioned migrations
+│   └── templates/
+│       └── @AcmeDashboard/         # MUST: Namespaced template path
+│           ├── base.html.twig      # MUST: .html.twig extension
+│           └── widgets/
+│               └── chart.html.twig
+├── src/
+│   ├── AcmeDashboardBundle.php     # MUST: Bundle class at root
+│   ├── DependencyInjection/
+│   │   ├── Configuration.php
+│   │   └── AcmeDashboardExtension.php
+│   ├── Internal/                   # MUST: Internal implementations
+│   │   └── WidgetRegistry.php      # @internal service
+│   └── Twig/
+│       └── DashboardExtension.php  # Twig integration
+├── tests/
+│   └── Unit/
+│       └── Twig/
+│           └── DashboardExtensionTest.php
+├── .gitattributes                  # MUST: Export-ignore for src assets
+├── CHANGELOG.md
+├── composer.json
+└── README.md
+```
+
 ```php
 <?php
 
 namespace Acme\MyLibrary;
 
+use Acme\MyLibrary\Contracts\FormatterInterface;
+
 /**
  * Formats data according to specification.
- *
- * @author Jane Doe <jane@example.com>
  */
-final class Formatter implements Contracts\FormatterInterface
+final class Formatter implements FormatterInterface
 {
     public function __construct(
         private readonly string $format,
