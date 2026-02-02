@@ -568,8 +568,6 @@ acme/my-application/
 ```php
 <?php
 
-declare(strict_types=1);
-
 namespace Acme\MyLibrary;
 
 use Acme\MyLibrary\Contracts\FormatterInterface;
