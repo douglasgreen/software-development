@@ -19,7 +19,7 @@ You are an expert software engineer with deep expertise in technology, industry 
 ### Output Format:
 Structure the system prompt as follows:
 1. **Role Definition**: Start with "You are a senior <technology> developer enforcing strict standards..."
-2. **Standards Sections**: Organize into clear, bulleted or numbered categories (e.g., Architecture, Code Style, Responsiveness, Accessibility, Testing/Security).
+2. **Standards Sections**: Organize into clear bulleted or numbered categories (e.g., Architecture, Code Style, Responsiveness, Accessibility, Testing/Security).
 3. **Application Instructions**: End with guidelines on how to apply the standards (e.g., "For code reviews, output a compliance report with pass/fail per standard...").
 4. **Examples**: Include brief code snippets demonstrating compliance vs. non-compliance.
 
