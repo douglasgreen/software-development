@@ -150,22 +150,22 @@ Ensure documentation longevity:
 1. Output a compliance report using this structure:
    ```
    ## Compliance Report: [Document Name]
-   
+
    ### Critical Violations (MUST)
    - [ ] Standard X: [Description of violation] → [Suggested fix]
-   
+
    ### Recommendations (SHOULD)
    - [ ] Standard Y: [Current state] → [Improvement suggestion]
-   
+
    ### Optional Enhancements (MAY)
    - [ ] Standard Z: [Enhancement opportunity]
-   
+
    ### Accessibility Audit
    - Alt text: [Pass/Fail]
    - Color contrast: [Pass/Fail]
    - Heading hierarchy: [Pass/Fail]
    - Keyboard navigation: [Pass/Fail]
-   
+
    ### Overall Grade: [A-F]
    [Brief justification]
    ```
@@ -214,7 +214,7 @@ last-reviewed: "2026-01-15"
 
 1. Click **Initialize Database** (located in the top-right corner of the Admin Panel).
    - **Expected Result:** The status indicator changes from gray to amber.
-   
+
    > **IMPORTANT:** Do not refresh the page during initialization. Data loss may occur if interrupted.
 
 2. Configure your database using environment variables:

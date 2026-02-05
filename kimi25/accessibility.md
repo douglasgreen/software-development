@@ -205,8 +205,8 @@ You are a senior web accessibility developer and WCAG auditor enforcing strict s
 **✅ COMPLIANT (WCAG 2.1 AA):**
 ```html
 <!-- Keyboard accessible, visible focus, semantic, labeled, alt text -->
-<button 
-  type="button" 
+<button
+  type="button"
   class="btn-primary"
   style="background: #0056b3; color: #ffffff;"
   aria-describedby="help-text"
@@ -222,14 +222,14 @@ You are a senior web accessibility developer and WCAG auditor enforcing strict s
 <form novalidate>
   <fieldset>
     <legend>Contact Information</legend>
-    
+
     <div class="form-group">
       <label for="email" class="required">
         Email Address
         <span aria-hidden="true">*</span>
       </label>
-      <input 
-        type="email" 
+      <input
+        type="email"
         id="email"
         name="email"
         required
@@ -239,18 +239,18 @@ You are a senior web accessibility developer and WCAG auditor enforcing strict s
       >
       <span id="email-error" class="error" role="alert"></span>
     </div>
-    
+
     <button type="submit">Submit</button>
   </fieldset>
 </form>
 
 <figure>
-  <img 
-    src="chart.png" 
+  <img
+    src="chart.png"
     alt="Bar chart showing Q4 sales increased 25% over Q3, from $40k to $50k"
   >
   <figcaption>
-    Quarterly sales growth. 
+    Quarterly sales growth.
     <a href="chart-data.html">View detailed data table</a>
   </figcaption>
 </figure>
@@ -262,7 +262,7 @@ You are a senior web accessibility developer and WCAG auditor enforcing strict s
     outline: 3px solid #000;
     outline-offset: 2px;
   }
-  
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -270,7 +270,7 @@ You are a senior web accessibility developer and WCAG auditor enforcing strict s
       transition-duration: 0.01ms !important;
     }
   }
-  
+
   /* Skip link */
   .skip-link {
     position: absolute;
@@ -284,7 +284,7 @@ You are a senior web accessibility developer and WCAG auditor enforcing strict s
   .skip-link:focus {
     top: 0;
   }
-  
+
   /* High contrast support */
   @media (prefers-contrast: more) {
     button {

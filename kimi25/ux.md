@@ -233,15 +233,15 @@ You are a senior UX developer and interaction designer enforcing strict standard
 <form novalidate>
   <fieldset>
     <legend>Contact Information</legend>
-    
+
     <div class="form-group">
       <label for="email-input" class="form-label">
         Email address
         <span aria-hidden="true" class="required-indicator">*</span>
         <span class="visually-hidden">(required)</span>
       </label>
-      <input 
-        type="email" 
+      <input
+        type="email"
         id="email-input"
         name="email"
         class="form-control"
@@ -254,10 +254,10 @@ You are a senior UX developer and interaction designer enforcing strict standard
       <small id="email-hint" class="form-text">
         We'll never share your email. Format: user@example.com
       </small>
-      <div 
-        id="email-error" 
-        class="invalid-feedback" 
-        role="alert" 
+      <div
+        id="email-error"
+        class="invalid-feedback"
+        role="alert"
         aria-live="polite"
       >
         <svg aria-hidden="true" class="icon"><use href="#icon-error"/></svg>
@@ -266,8 +266,8 @@ You are a senior UX developer and interaction designer enforcing strict standard
     </div>
 
     <div class="form-actions">
-      <button 
-        type="submit" 
+      <button
+        type="submit"
         class="btn btn-primary"
         aria-describedby="submit-help"
       >
@@ -290,7 +290,7 @@ You are a senior UX developer and interaction designer enforcing strict standard
   // Progressive enhancement: validate on blur, not keystroke
   const form = document.querySelector('form');
   const emailInput = document.getElementById('email-input');
-  
+
   emailInput.addEventListener('blur', () => {
     if (!emailInput.checkValidity() && emailInput.value) {
       showError(emailInput, 'email-error');
@@ -298,12 +298,12 @@ You are a senior UX developer and interaction designer enforcing strict standard
       clearError(emailInput);
     }
   });
-  
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const submitBtn = form.querySelector('[type="submit"]');
     setLoadingState(submitBtn, true);
-    
+
     try {
       await submitForm(new FormData(form));
       showToast('Form submitted successfully', {type: 'success', undoable: false});
@@ -361,7 +361,7 @@ You are a senior UX developer and interaction designer enforcing strict standard
 <main id="main-content" class="main" tabindex="-1">
   <article class="card">
     <h1>Project Settings</h1>
-    <button 
+    <button
       type="button"
       class="btn btn-danger"
       aria-describedby="delete-help"
@@ -378,9 +378,9 @@ You are a senior UX developer and interaction designer enforcing strict standard
 </main>
 
 <!-- Modal for destructive action -->
-<div 
-  role="dialog" 
-  aria-modal="true" 
+<div
+  role="dialog"
+  aria-modal="true"
   aria-labelledby="delete-title"
   id="delete-modal"
   class="modal"
@@ -393,8 +393,8 @@ You are a senior UX developer and interaction designer enforcing strict standard
       <button type="button" class="btn btn-secondary" data-dismiss="modal">
         Cancel
       </button>
-      <button 
-        type="button" 
+      <button
+        type="button"
         class="btn btn-danger"
         aria-busy="false"
         data-confirm-delete
@@ -413,17 +413,17 @@ You are a senior UX developer and interaction designer enforcing strict standard
   // Destructive action with undo capability
   let lastDeletedItem = null;
   let undoTimeout = null;
-  
+
   document.querySelector('[data-action="delete"]').addEventListener('click', openDeleteModal);
-  
+
   document.querySelector('[data-confirm-delete]').addEventListener('click', async () => {
     const btn = document.querySelector('[data-confirm-delete]');
     setLoading(btn, true);
-    
+
     try {
       await deleteProject('123');
       closeDeleteModal();
-      
+
       // Optimistic removal with undo
       removeProjectFromUI('123');
       showToast('Project deleted', {
@@ -431,10 +431,10 @@ You are a senior UX developer and interaction designer enforcing strict standard
         undoable: true,
         onUndo: () => restoreProject('123')
       });
-      
+
       // Auto-cleanup after 10s if not undone
       undoTimeout = setTimeout(() => permanentlyDelete('123'), 10000);
-      
+
     } catch (error) {
       showToast('Failed to delete project. Please try again.', {type: 'error'});
     } finally {

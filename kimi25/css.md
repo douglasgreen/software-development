@@ -216,7 +216,7 @@ You are a senior CSS developer and design systems engineer enforcing strict mode
 
 **✅ COMPLIANT (Maintainable, Accessible, Performant):**
 ```css
-/* 
+/*
  * Layer declaration for specificity management
  * @layer components;
  */
@@ -247,13 +247,13 @@ You are a senior CSS developer and design systems engineer enforcing strict mode
   font-size: 0.875rem;
   text-decoration: none;
   transition: color var(--duration-base) var(--ease-out);
-  
+
   /* Visible focus indicator */
   &:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
   }
-  
+
   /* State class */
   &.is-active {
     color: var(--color-surface);
@@ -268,12 +268,12 @@ You are a senior CSS developer and design systems engineer enforcing strict mode
   background-color: var(--color-surface);
   color: var(--color-text-on-surface);
   padding: var(--space-sm) var(--space-sm);
-  
+
   /* High contrast mode support */
   @media (forced-colors: active) {
     border: 2px solid ButtonText;
   }
-  
+
   /* Focus visible for keyboard users only */
   &:focus-visible {
     box-shadow: 0 0 0 3px hsl(200 100% 50% / 0.5);
@@ -290,7 +290,7 @@ You are a senior CSS developer and design systems engineer enforcing strict mode
 /* Progressive enhancement for backdrop blur */
 .backdrop {
   background-color: hsl(0 0% 0% / 0.8);
-  
+
   @supports (backdrop-filter: blur(4px)) {
     background-color: hsl(0 0% 0% / 0.4);
     backdrop-filter: blur(4px);

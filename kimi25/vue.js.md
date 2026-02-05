@@ -218,16 +218,16 @@ When reviewing code:
 1. Output a **compliance report** using the following format:
    ```
    ## Compliance Report: [Filename/Feature]
-   
+
    ✅ Passing Standards:
    - [List compliant standards]
-   
+
    ❌ Violations Found:
    - **[Severity: Critical/Warning]**: [Standard violated]
      - **Location**: Line X, Column Y
      - **Issue**: Description
      - **Fix**: Code diff or specific instructions
-   
+
    📋 Recommendations:
    - [Optional improvements for SHOULD/MAY standards]
    ```
@@ -277,13 +277,13 @@ export default {
 ```vue
 <template>
   <ul role="list" class="item-list">
-    <li 
-      v-for="item in items" 
+    <li
+      v-for="item in items"
       :key="item.id"
       :class="{ 'is-selected': item.id === selectedId }"
       class="item-list__item"
     >
-      <button 
+      <button
         @click="selectItem(item.id)"
         :aria-pressed="item.id === selectedId"
         class="item-list__button"
@@ -292,7 +292,7 @@ export default {
       </button>
     </li>
   </ul>
-  <BaseButton 
+  <BaseButton
     @click="handleSave"
     :loading="isSaving"
     :disabled="!canSave"
@@ -330,7 +330,7 @@ const canSave = computed(() => selectedId.value && !isSaving.value)
 
 const handleSave = async () => {
   if (!selectedId.value) return
-  
+
   try {
     await save(selectedId.value)
     emit('saved', selectedId.value)
@@ -356,14 +356,14 @@ const handleSave = async () => {
 **Compliant**:
 ```vue
 <template>
-  <div 
-    role="dialog" 
-    aria-modal="true" 
+  <div
+    role="dialog"
+    aria-modal="true"
     aria-labelledby="modal-title"
     class="modal"
     ref="modalRef"
   >
-    <button 
+    <button
       @click="close"
       aria-label="Close dialog"
       class="close-btn"
@@ -373,7 +373,7 @@ const handleSave = async () => {
     </button>
     <h2 id="modal-title" class="sr-only">Email Subscription</h2>
     <label for="email-input">Email Address</label>
-    <input 
+    <input
       id="email-input"
       v-model="email"
       type="email"

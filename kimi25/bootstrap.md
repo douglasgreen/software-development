@@ -182,10 +182,10 @@ You are a senior Bootstrap developer and UI engineer enforcing strict standards 
 **✅ COMPLIANT (Accessible, Semantic, Responsive):**
 ```html
 <!-- Accessible button with proper type and margin utility -->
-<button 
-  type="button" 
-  class="btn btn-primary ms-2" 
-  data-bs-toggle="modal" 
+<button
+  type="button"
+  class="btn btn-primary ms-2"
+  data-bs-toggle="modal"
   data-bs-target="#exampleModal"
   aria-haspopup="dialog"
   aria-expanded="false"
@@ -200,9 +200,9 @@ You are a senior Bootstrap developer and UI engineer enforcing strict standards 
     <div class="row g-4">
       <div class="col-12 col-md-6 col-lg-4">
         <article class="card h-100">
-          <img 
-            src="photo.jpg" 
-            class="card-img-top img-fluid" 
+          <img
+            src="photo.jpg"
+            class="card-img-top img-fluid"
             alt="Descriptive text about the image content"
             width="400"
             height="300"
@@ -246,17 +246,17 @@ You are a senior Bootstrap developer and UI engineer enforcing strict standards 
 <form novalidate>
   <fieldset>
     <legend class="visually-hidden">Newsletter Subscription</legend>
-    
+
     <div class="mb-3">
       <label for="emailInput" class="form-label">
         Email address
         <span class="text-danger" aria-hidden="true">*</span>
         <span class="visually-hidden">(required)</span>
       </label>
-      <input 
-        type="email" 
-        class="form-control" 
-        id="emailInput" 
+      <input
+        type="email"
+        class="form-control"
+        id="emailInput"
         name="email"
         required
         aria-required="true"
@@ -272,9 +272,9 @@ You are a senior Bootstrap developer and UI engineer enforcing strict standards 
     </div>
 
     <div class="mb-3 form-check">
-      <input 
-        type="checkbox" 
-        class="form-check-input" 
+      <input
+        type="checkbox"
+        class="form-check-input"
         id="newsletterCheck"
         name="subscribe"
       >

@@ -43,7 +43,7 @@ You are a senior Twig developer and template architect enforcing strict standard
   {% if user.isActive %}
     <span>Active</span>
   {% endif %}
-  
+
   {# Acceptable for simple conditions #}
   <span class="{{ user.isActive ? 'active' : 'inactive' }}">
   ```
@@ -202,7 +202,7 @@ You are a senior Twig developer and template architect enforcing strict standard
 
 **✅ COMPLIANT (Secure, Maintainable, Accessible):**
 ```twig
-{# 
+{#
   @var Product[] products
   @var string category_name
 #}
@@ -213,7 +213,7 @@ You are a senior Twig developer and template architect enforcing strict standard
 {% block body %}
   <section aria-labelledby="category-heading">
     <h1 id="category-heading">{{ category_name }}</h1>
-    
+
     {% for product in products|filter(p => p.isAvailable) %}
       {% include 'components/_product_card.html.twig' with {
         product: product,
@@ -234,23 +234,23 @@ You are a senior Twig developer and template architect enforcing strict standard
       {{ product.name }}  {# Auto-escaped #}
     </a>
   </h2>
-  
-  <img 
-    src="{{ asset('images/products/' ~ product.image) }}" 
+
+  <img
+    src="{{ asset('images/products/' ~ product.image) }}"
     alt="{{ product.alt_text|default('Product image')|e('html_attr') }}"
     width="{{ product.imageWidth }}"
     height="{{ product.imageHeight }}"
     loading="lazy"
   >
-  
+
   {% if show_upsell %}
     <span class="badge">{{ 'product.premium'|trans }}</span>
   {% endif %}
-  
+
   <form action="{{ path('cart_add') }}" method="post">
     <input type="hidden" name="product_id" value="{{ product.id }}">
     <input type="hidden" name="_token" value="{{ csrf_token('cart_add') }}">
-    
+
     <button type="submit" class="btn btn-primary">
       {{ 'action.add_to_cart'|trans }}
     </button>

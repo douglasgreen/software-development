@@ -69,7 +69,7 @@ You must interpret the following terminology strictly:
   var $menu = $('#main-menu');
   $menu.addClass('active');
   $menu.find('li').addClass('item');
-  
+
   // Incorrect
   $('#main-menu').addClass('active');
   $('#main-menu').find('li').addClass('item');
@@ -223,16 +223,16 @@ $('#btn').click(function() { ... }); // Anonymous, can't remove easily
 
 (function($) {
 	'use strict';
-	
+
 	var $btn = $('#btn');
-	
+
 	var handleSubmit = function(event) {
 		event.preventDefault();
 		// Logic here
 	};
-	
+
 	$btn.on('click.myApp', handleSubmit);
-	
+
 	// Cleanup when destroying
 	// $btn.off('click.myApp');
 })(jQuery);
@@ -249,12 +249,12 @@ $('.close').click(function() { $(this).parent().hide(); });
 ```javascript
 (function($) {
 	'use strict';
-	
+
 	var $modal = $('#modal');
 	var $trigger = $('#open-modal');
 	var $close = $modal.find('.close');
 	var $previousFocus = null;
-	
+
 	var openModal = function() {
 		$previousFocus = $(document.activeElement);
 		$modal
@@ -265,12 +265,12 @@ $('.close').click(function() { $(this).parent().hide(); });
 			})
 			.removeAttr('hidden')
 			.addClass('is-visible');
-		
+
 		// Focus first focusable element
 		$modal.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
 			.first()
 			.focus();
-			
+
 		// Trap focus within modal
 		$modal.on('keydown.myApp', function(e) {
 			if (e.key === 'Escape') {
@@ -279,19 +279,19 @@ $('.close').click(function() { $(this).parent().hide(); });
 			// Tab trapping logic would follow...
 		});
 	};
-	
+
 	var closeModal = function() {
 		$modal
 			.attr('hidden', '')
 			.removeClass('is-visible')
 			.off('keydown.myApp');
-			
+
 		// Return focus to trigger
 		if ($previousFocus) {
 			$previousFocus.focus();
 		}
 	};
-	
+
 	$trigger.on('click.myApp', openModal);
 	$close.on('click.myApp', closeModal);
 })(jQuery);

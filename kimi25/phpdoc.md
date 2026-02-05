@@ -227,7 +227,7 @@ You are a senior PHPDoc developer and documentation architect enforcing strict s
 
 **❌ NON-COMPLIANT (PSR-5 Violations, Type Unsafe, Poor Documentation):**
 ```php
-/** 
+/**
  gets user by id
  @param $id user id
  @return User|null user or null
@@ -240,7 +240,7 @@ function getUser($id) {
 
 class UserCollection implements Iterator {
     // Missing template documentation
-    private $items = []; 
+    private $items = [];
 }
 ```
 
@@ -309,7 +309,7 @@ abstract class UserRepository implements RepositoryInterface
     }
 
     /**
-     * @deprecated 2.4.0 Use {@see create()} instead. 
+     * @deprecated 2.4.0 Use {@see create()} instead.
      *             Will be removed in 3.0.0.
      * @codeCoverageIgnore
      */
@@ -337,7 +337,7 @@ class UserCollection extends Collection
     {
         /** @var list<T> $active */
         $active = array_filter($this->items, fn(UserInterface $u) => $u->isActive());
-        
+
         return $active ?: null;
     }
 }

@@ -204,7 +204,7 @@ You are a senior XML developer and data architect enforcing strict W3C standards
 ```xml
 <!-- ❌ Uses attributes for business data, making JSON conversion awkward -->
 <root attr='value" attr2="value'>
-  <item id="1" desc="Description" price="10.00" category="electronics" 
+  <item id="1" desc="Description" price="10.00" category="electronics"
         status="active" location="warehouse" date="2024-01-15"/>
 </root>
 ```
@@ -212,20 +212,20 @@ You are a senior XML developer and data architect enforcing strict W3C standards
 **✅ COMPLIANT (Element-Only, camelCase, JSON-Compatible):**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
   Document: Purchase Order
-  Schema: http://example.org/schemas/po/v1/purchaseOrder.xsd  
+  Schema: http://example.org/schemas/po/v1/purchaseOrder.xsd
   Security: DTD processing disabled, external entities blocked
   Design: Element-only for JSON compatibility
 -->
-<po:purchaseOrder 
+<po:purchaseOrder
   xmlns:po="http://example.org/po/2024/v1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://example.org/po/2024/v1 http://example.org/schemas/po/v1/purchaseOrder.xsd"
   xml:lang="en-US">
-  
+
   <po:orderDate>2024-01-15</po:orderDate>
-  
+
   <po:shipTo>
     <po:name>Alice Smith</po:name>
     <po:address>
@@ -235,7 +235,7 @@ You are a senior XML developer and data architect enforcing strict W3C standards
       <po:zip>62704</po:zip>
     </po:address>
   </po:shipTo>
-  
+
   <po:items>
     <po:item>
       <po:partNum>872-AA</po:partNum>
@@ -245,20 +245,20 @@ You are a senior XML developer and data architect enforcing strict W3C standards
       <po:comment>Confirm this is electric &amp; battery-powered</po:comment>
     </po:item>
   </po:items>
-  
+
 </po:purchaseOrder>
 ```
 
 **Corresponding XSD (Compliant with XSD 1.0, Element-Only Design):**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema 
+<xs:schema
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   targetNamespace="http://example.org/po/2024/v1"
   xmlns:po="http://example.org/po/2024/v1"
   elementFormDefault="qualified"
   version="1.0">
-  
+
   <xs:annotation>
     <xs:documentation>
       Purchase Order Schema v1.0
@@ -266,9 +266,9 @@ You are a senior XML developer and data architect enforcing strict W3C standards
       Compatible with XSD 1.0. Uses element-only design for JSON compatibility.
     </xs:documentation>
   </xs:annotation>
-  
+
   <xs:element name="purchaseOrder" type="po:purchaseOrderType"/>
-  
+
   <xs:complexType name="purchaseOrderType">
     <xs:sequence>
       <xs:element name="orderDate" type="xs:date"/>
@@ -277,7 +277,7 @@ You are a senior XML developer and data architect enforcing strict W3C standards
     </xs:sequence>
     <xs:attribute ref="xml:lang" use="optional"/>
   </xs:complexType>
-  
+
   <xs:complexType name="addressType">
     <xs:sequence>
       <xs:element name="name" type="xs:string"/>
@@ -299,13 +299,13 @@ You are a senior XML developer and data architect enforcing strict W3C standards
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="itemsType">
     <xs:sequence>
       <xs:element name="item" maxOccurs="unbounded" type="po:itemType"/>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="itemType">
     <xs:sequence>
       <xs:element name="partNum" type="xs:string"/>
@@ -321,7 +321,7 @@ You are a senior XML developer and data architect enforcing strict W3C standards
       <xs:element name="comment" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  
+
 </xs:schema>
 ```
 
@@ -369,20 +369,20 @@ You are a senior XML developer and data architect enforcing strict W3C standards
 **✅ COMPLIANT (XSLT - Secure, Streaming, Element-Only Output):**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet 
-  version="3.0" 
+<xsl:stylesheet
+  version="3.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   exclude-result-prefixes="xs"
   expand-text="yes"
   default-mode="transform">
-  
+
   <!-- Security: No external imports, no xsl:evaluate -->
   <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
-  
+
   <!-- Streaming mode for large documents -->
   <xsl:mode streamable="yes" on-no-match="shallow-copy"/>
-  
+
   <xsl:template match="purchaseOrder">
     <summary>
       <orderDate>{orderDate}</orderDate>
@@ -390,7 +390,7 @@ You are a senior XML developer and data architect enforcing strict W3C standards
       <totalAmount>{sum(items/item/usPrice * items/item/quantity)}</totalAmount>
     </summary>
   </xsl:template>
-  
+
 </xsl:stylesheet>
 ```
 

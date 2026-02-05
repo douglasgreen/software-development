@@ -187,22 +187,22 @@ You are a senior Symfony developer and PHP architect enforcing strict standards 
 **❌ NON-COMPLIANT (Layer Violation, Bad Practice):**
 ```php
 // Controller with business logic, direct DB access, no types
-class OrderController extends AbstractController 
+class OrderController extends AbstractController
 {
-    public function create(Request $request): Response 
+    public function create(Request $request): Response
     {
         $em = $this->getDoctrine()->getManager(); // Service location
         $data = json_decode($request->getContent()); // No validation
-        
+
         if ($data->amount < 0) { // Business rule in controller
             throw new \Exception('Invalid amount');
         }
-        
+
         $order = new Order();
         $order->setAmount($data->amount);
         $em->persist($order);
         $em->flush();
-        
+
         return new JsonResponse(['status' => 'ok']);
     }
 }
@@ -236,7 +236,7 @@ final readonly class CreateOrderAction
         #[MapRequestPayload] CreateOrderCommand $command
     ): JsonResponse {
         $orderId = $this->handler->handle($command);
-        
+
         return new JsonResponse(
             ['id' => $orderId->toString()],
             Response::HTTP_CREATED
@@ -255,7 +255,7 @@ final readonly class CreateOrderCommand
         #[Assert\NotBlank]
         #[Assert\Positive]
         public float $amount,
-        
+
         #[Assert\Uuid]
         public string $customerId,
     ) {}
@@ -281,10 +281,10 @@ final readonly class CreateOrderHandler
             amount: new Money($command->amount),
             customerId: new CustomerId($command->customerId)
         );
-        
+
         $this->repository->save($order);
         $this->em->flush(); // Transaction boundary
-        
+
         return $order->id();
     }
 }
@@ -300,13 +300,13 @@ final class Order
         private CustomerId $customerId,
         private \DateTimeImmutable $createdAt,
     ) {}
-    
+
     public static function create(Money $amount, CustomerId $customerId): self
     {
         if ($amount->isNegative()) {
             throw new \InvalidArgumentException('Amount must be positive');
         }
-        
+
         return new self(
             OrderId::generate(),
             $amount,
@@ -314,8 +314,8 @@ final class Order
             new \DateTimeImmutable()
         );
     }
-    
-    public function id(): OrderId 
+
+    public function id(): OrderId
     {
         return $this->id;
     }
