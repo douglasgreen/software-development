@@ -14,9 +14,9 @@ Throughout these standards, the following terms indicate requirement levels per 
 
 ---
 
-# SECTION 1: DOCUMENT STRUCTURE & ORGANIZATION
+## SECTION 1: DOCUMENT STRUCTURE & ORGANIZATION
 
-## 1.1 General Principles
+### 1.1 General Principles
 
 All documentation MUST:
 - Be written in UTF-8 encoded plain text formats (Markdown preferred)
@@ -31,7 +31,7 @@ All documentation SHOULD:
 - Include a "Last Updated" timestamp in metadata
 - Provide estimated reading time for documents exceeding 1000 words
 
-## 1.2 Required YAML Front-Matter Schema
+### 1.2 Required YAML Front-Matter Schema
 
 Every Markdown document MUST begin with YAML front-matter conforming to this schema:
 
@@ -54,7 +54,7 @@ ai_context: |                              # RECOMMENDED: LLM-specific summary
 ---
 ```
 
-## 1.3 Required Project Documents
+### 1.3 Required Project Documents
 
 Every project MUST include the following documents:
 
@@ -83,9 +83,9 @@ Projects SHOULD also include:
 
 ---
 
-# SECTION 2: ARCHITECTURE DOCUMENTATION
+## SECTION 2: ARCHITECTURE DOCUMENTATION
 
-## 2.1 Architecture Principles
+### 2.1 Architecture Principles
 
 All architectural documentation MUST address:
 
@@ -95,7 +95,7 @@ All architectural documentation MUST address:
 4. **Dependency Management**: Explicitly declare all external dependencies with version constraints
 5. **Failure Modes**: Document expected failure scenarios and recovery procedures
 
-## 2.2 Architecture Decision Records (ADRs)
+### 2.2 Architecture Decision Records (ADRs)
 
 ADRs MUST follow this template structure:
 
@@ -109,46 +109,46 @@ supersedes: "ADR-XXXX"           # If applicable
 superseded_by: "ADR-YYYY"        # If applicable
 ---
 
-# ADR-NNNN: Decision Title
+## ADR-NNNN: Decision Title
 
-## Context
+### Context
 
 [Describe the issue motivating this decision. Include constraints, requirements,
 and forces at play. Be factual and avoid opinion.]
 
-## Decision
+### Decision
 
 [State the decision clearly and concisely. Use active voice.]
 
 We will [action] because [rationale].
 
-## Consequences
+### Consequences
 
-### Positive
+#### Positive
 - [Benefit 1]
 - [Benefit 2]
 
-### Negative
+#### Negative
 - [Drawback 1]
 - [Mitigation strategy if applicable]
 
-### Neutral
+#### Neutral
 - [Trade-off or side effect]
 
-## Alternatives Considered
+### Alternatives Considered
 
-### Alternative 1: [Name]
+#### Alternative 1: [Name]
 - **Pros**: [List]
 - **Cons**: [List]
 - **Reason rejected**: [Explanation]
 
-## References
+### References
 
 - [Link to relevant documentation]
 - [Link to related ADRs]
 ```
 
-## 2.3 System Diagrams
+### 2.3 System Diagrams
 
 Architecture documentation MUST include:
 
@@ -179,9 +179,9 @@ C4Context
 
 ---
 
-# SECTION 3: CODE STYLE & CONVENTIONS
+## SECTION 3: CODE STYLE & CONVENTIONS
 
-## 3.1 Universal Principles (Language-Agnostic)
+### 3.1 Universal Principles (Language-Agnostic)
 
 All code MUST adhere to:
 
@@ -191,7 +191,7 @@ All code MUST adhere to:
 4. **Single Responsibility**: Each function/class/module has one reason to change
 5. **Explicit Over Implicit**: Avoid magic; make behavior predictable and traceable
 
-## 3.2 Automation-First Formatting
+### 3.2 Automation-First Formatting
 
 Code formatting MUST be enforced via automated tools. Manual formatting rules are prohibited.
 
@@ -212,7 +212,7 @@ All projects MUST:
 - Run formatters in CI/CD pipelines with `--check` flag
 - Document tool versions in `docs/standards.md`
 
-## 3.3 Naming Conventions
+### 3.3 Naming Conventions
 
 | Element | Convention | Example |
 |---------|------------|---------|
@@ -226,9 +226,9 @@ All projects MUST:
 | Interfaces | PascalCase, optionally prefixed | `IUserRepository` (C#) or `UserRepository` |
 | Boolean variables | Prefix with is/has/can/should | `isActive`, `hasPermission` |
 
-## 3.4 Code Comments and Documentation
+### 3.4 Code Comments and Documentation
 
-### Inline Comments
+#### Inline Comments
 
 Comments MUST:
 - Explain *why*, not *what* (the code shows what)
@@ -250,7 +250,7 @@ if (account.createdAt < LEGACY_CUTOFF_DATE) {
 }
 ```
 
-### Documentation Comments
+#### Documentation Comments
 
 Public APIs MUST include documentation comments following language-specific conventions:
 
@@ -276,7 +276,7 @@ async getById(userId: string): Promise<User> {
 ```
 
 ```python
-# COMPLIANT: Python docstring (Google style)
+## COMPLIANT: Python docstring (Google style)
 def get_user_by_id(user_id: str) -> User:
     """Retrieves a user by their unique identifier.
 
@@ -328,9 +328,9 @@ Documentation comments SHOULD include:
 
 ---
 
-# SECTION 4: API DOCUMENTATION
+## SECTION 4: API DOCUMENTATION
 
-## 4.1 REST API Standards
+### 4.1 REST API Standards
 
 REST APIs MUST be documented using OpenAPI Specification (OAS) 3.0+.
 
@@ -342,7 +342,7 @@ API documentation MUST include:
 - Rate limiting information
 
 ```yaml
-# COMPLIANT: OpenAPI 3.1 snippet
+## COMPLIANT: OpenAPI 3.1 snippet
 openapi: 3.1.0
 info:
   title: User Management API
@@ -432,7 +432,7 @@ components:
       bearerFormat: JWT
 ```
 
-## 4.2 Error Response Standards
+### 4.2 Error Response Standards
 
 All APIs MUST return errors in a consistent format per RFC 9457 (Problem Details):
 
@@ -454,9 +454,9 @@ All APIs MUST return errors in a consistent format per RFC 9457 (Problem Details
 }
 ```
 
-## 4.3 Automated API Documentation Generation
+### 4.3 Automated API Documentation Generation
 
-### 4.3.1 Documentation Generation Requirements
+#### 4.3.1 Documentation Generation Requirements
 
 Projects MUST implement automated API documentation generation from inline documentation comments (JSDoc, TSDoc, PHPDoc, etc.) to enable LLM consumption without requiring source code access.
 
@@ -472,7 +472,7 @@ Projects SHOULD:
 - Provide multiple output formats (JSON, Markdown, HTML)
 - Include API usage examples in generated documentation
 
-### 4.3.2 TypeScript/JavaScript Documentation Generation
+#### 4.3.2 TypeScript/JavaScript Documentation Generation
 
 TypeScript and JavaScript projects MUST use TypeDoc with the following configuration:
 
@@ -509,7 +509,7 @@ TypeScript and JavaScript projects MUST use TypeDoc with the following configura
 }
 ```
 
-### 4.3.3 PHP Documentation Generation
+#### 4.3.3 PHP Documentation Generation
 
 PHP projects MUST use PHPDocumentor with the following configuration:
 
@@ -559,7 +559,7 @@ PHP projects MUST use PHPDocumentor with the following configuration:
 }
 ```
 
-### 4.3.4 LLM-Optimized Context File Generation
+#### 4.3.4 LLM-Optimized Context File Generation
 
 All projects MUST include a post-processing script that generates consolidated API references optimized for LLM consumption.
 
@@ -676,13 +676,13 @@ ai_context: |
   documentation comments.
 ---
 
-# API Reference (LLM Context)
+## API Reference (LLM Context)
 
 > **Generated:** ${apiRef.generated}
 > **Version:** ${apiRef.version}
 > **Purpose:** LLM-optimized API catalog for code automation
 
-## Quick Index
+### Quick Index
 
 `;
 
@@ -759,7 +759,7 @@ ai_context: |
 generateLLMContext().catch(console.error);
 ```
 
-### 4.3.5 Generated Documentation Structure
+#### 4.3.5 Generated Documentation Structure
 
 Generated API documentation MUST be stored in the following structure:
 
@@ -773,7 +773,7 @@ docs/
         └── index.html
 ```
 
-### 4.3.6 LLM Context File Requirements
+#### 4.3.6 LLM Context File Requirements
 
 The generated `llm-context.md` file MUST:
 - Include YAML front-matter per Section 1.2
@@ -791,7 +791,7 @@ The generated `llm-context.json` file MUST:
 - Include all information from the Markdown version
 - Use consistent property names across all APIs
 
-### 4.3.7 Documentation Update Process
+#### 4.3.7 Documentation Update Process
 
 API documentation MUST be regenerated:
 - Automatically in CI/CD on every push to main branch
@@ -804,7 +804,7 @@ Developers MUST:
 - Commit generated files to version control
 - Link to `docs/api/llm-context.md` in pull request descriptions when APIs change
 
-### 4.3.8 LLM Integration Guidelines
+#### 4.3.8 LLM Integration Guidelines
 
 When providing context to LLMs for code automation, developers SHOULD:
 - Reference `docs/api/llm-context.md` instead of source files
@@ -823,16 +823,16 @@ Using the API reference in docs/api/llm-context.md, generate a function that:
 
 ---
 
-# SECTION 5: RESPONSIVENESS & CROSS-PLATFORM
+## SECTION 5: RESPONSIVENESS & CROSS-PLATFORM
 
-## 5.1 Multi-Platform Principles
+### 5.1 Multi-Platform Principles
 
 Applications MUST:
 - Support responsive layouts adapting to viewport sizes from 320px to 4K
 - Function without JavaScript for core content (progressive enhancement)
 - Maintain feature parity across supported platforms unless technically infeasible
 
-## 5.2 Breakpoint Documentation
+### 5.2 Breakpoint Documentation
 
 Document responsive breakpoints in design specifications:
 
@@ -849,7 +849,7 @@ $breakpoints: (
 );
 ```
 
-## 5.3 Platform-Specific Documentation
+### 5.3 Platform-Specific Documentation
 
 Cross-platform projects MUST document:
 - Supported platforms and versions (e.g., "iOS 14+, Android 10+")
@@ -859,23 +859,23 @@ Cross-platform projects MUST document:
 
 ---
 
-# SECTION 6: SECURITY
+## SECTION 6: SECURITY
 
-## 6.1 Security Documentation Requirements
+### 6.1 Security Documentation Requirements
 
 All projects MUST include a `SECURITY.md` file with:
 
 ```markdown
-# Security Policy
+## Security Policy
 
-## Supported Versions
+### Supported Versions
 
 | Version | Supported          |
 |---------|--------------------|
 | 2.x.x   | :white_check_mark: |
 | 1.x.x   | :x:                |
 
-## Reporting a Vulnerability
+### Reporting a Vulnerability
 
 **Do not report security vulnerabilities through public GitHub issues.**
 
@@ -891,14 +891,14 @@ Include:
 
 We will acknowledge receipt within 48 hours and provide a detailed response within 7 days.
 
-## Security Measures
+### Security Measures
 
 [Document security controls, authentication methods, data encryption, etc.]
 ```
 
-## 6.2 Secure Coding Standards
+### 6.2 Secure Coding Standards
 
-### Input Validation
+#### Input Validation
 
 All external input MUST be validated:
 
@@ -923,7 +923,7 @@ function createUser(input: any): User {
 }
 ```
 
-### Secrets Management
+#### Secrets Management
 
 Code MUST NOT contain hardcoded secrets:
 
@@ -950,7 +950,7 @@ const config = {
 };
 ```
 
-## 6.3 Dependency Security
+### 6.3 Dependency Security
 
 Projects MUST:
 - Run automated dependency scanning (e.g., Dependabot, Snyk, npm audit)
@@ -960,9 +960,9 @@ Projects MUST:
 
 ---
 
-# SECTION 7: ERROR HANDLING
+## SECTION 7: ERROR HANDLING
 
-## 7.1 Error Handling Principles
+### 7.1 Error Handling Principles
 
 Code MUST:
 - Fail fast on unrecoverable errors
@@ -971,7 +971,7 @@ Code MUST:
 - Never expose sensitive information in error messages
 - Use typed errors/exceptions where language supports
 
-## 7.2 Error Handling Patterns
+### 7.2 Error Handling Patterns
 
 ```typescript
 // COMPLIANT: Structured error handling
@@ -1039,9 +1039,9 @@ function errorHandler(err: Error, req: Request, res: Response, next: NextFunctio
 
 ---
 
-# SECTION 8: TESTING
+## SECTION 8: TESTING
 
-## 8.1 Testing Requirements
+### 8.1 Testing Requirements
 
 All projects MUST maintain:
 - Unit test coverage ≥ 80% for business logic
@@ -1053,7 +1053,7 @@ Projects SHOULD maintain:
 - Performance benchmarks for critical paths
 - Accessibility automated tests (e.g., axe-core)
 
-## 8.2 Test Documentation
+### 8.2 Test Documentation
 
 Test files MUST include:
 - Clear descriptions of what is being tested
@@ -1112,7 +1112,7 @@ describe('UserService', () => {
 });
 ```
 
-## 8.3 Test Coverage Documentation
+### 8.3 Test Coverage Documentation
 
 Projects MUST document:
 - Coverage thresholds in configuration
@@ -1121,9 +1121,9 @@ Projects MUST document:
 
 ---
 
-# SECTION 9: PERFORMANCE
+## SECTION 9: PERFORMANCE
 
-## 9.1 Performance Documentation
+### 9.1 Performance Documentation
 
 Performance-critical systems MUST document:
 - Performance requirements (latency, throughput, resource limits)
@@ -1131,12 +1131,12 @@ Performance-critical systems MUST document:
 - Known performance limitations
 - Optimization strategies employed
 
-## 9.2 Performance Budgets
+### 9.2 Performance Budgets
 
 Web applications SHOULD define and document performance budgets:
 
 ```yaml
-# performance-budget.yml
+## performance-budget.yml
 metrics:
   # Core Web Vitals
   largest_contentful_paint:
@@ -1164,16 +1164,16 @@ monitoring:
 
 ---
 
-# SECTION 10: FILE LAYOUT & PROJECT STRUCTURE
+## SECTION 10: FILE LAYOUT & PROJECT STRUCTURE
 
-## 10.1 Standard Project Structure
+### 10.1 Standard Project Structure
 
 Projects MUST document their file structure in `docs/file-reference.md`:
 
 ```markdown
-# File Reference
+## File Reference
 
-## Directory Structure
+### Directory Structure
 
 ````
 project-root/
@@ -1233,9 +1233,9 @@ project-root/
 └── SECURITY.md                 # Security policy
 ````
 
-## Key Files
+### Key Files
 
-### Configuration Files
+#### Configuration Files
 
 | File | Purpose | Required Fields |
 |------|---------|-----------------|
@@ -1244,14 +1244,14 @@ project-root/
 | `typedoc.json` | API documentation generation | entryPoints, out, json |
 | `package.json` | Dependencies and scripts | name, version, scripts |
 
-### Entry Points
+#### Entry Points
 
 | File | Purpose | Key Exports |
 |------|---------|-------------|
 | `src/index.ts` | Application bootstrap | Starts HTTP server |
 | `src/config/index.ts` | Configuration | `config` object |
 
-### Generated Documentation
+#### Generated Documentation
 
 | File | Purpose | Generation Command |
 |------|---------|-------------------|
@@ -1260,7 +1260,7 @@ project-root/
 | `docs/api/api-catalog.json` | Full TypeDoc output | `npm run docs:json` |
 ```
 
-## 10.2 Documentation Directory Standards
+### 10.2 Documentation Directory Standards
 
 The `docs/api/` directory MUST contain:
 - `llm-context.md` - LLM-optimized API reference (auto-generated)
@@ -1278,9 +1278,9 @@ Generated files in `docs/api/` MUST be committed to version control to ensure:
 
 ---
 
-# SECTION 11: VERSION CONTROL & CHANGELOG
+## SECTION 11: VERSION CONTROL & CHANGELOG
 
-## 11.1 Commit Message Standards
+### 11.1 Commit Message Standards
 
 Commit messages MUST follow Conventional Commits specification:
 
@@ -1307,7 +1307,7 @@ Types:
 Breaking changes MUST include `BREAKING CHANGE:` in footer or `!` after type.
 
 ```
-# COMPLIANT
+## COMPLIANT
 feat(auth): add OAuth2 authentication support
 
 Implements OAuth2 authorization code flow for third-party integrations.
@@ -1318,61 +1318,61 @@ Implements OAuth2 authorization code flow for third-party integrations.
 
 Closes #123
 
-# COMPLIANT: Breaking change
+## COMPLIANT: Breaking change
 feat(api)!: change user endpoint response format
 
 BREAKING CHANGE: User endpoint now returns nested address object
 instead of flat address fields.
 
-# COMPLIANT: Documentation update
+## COMPLIANT: Documentation update
 docs: regenerate API reference for LLM context
 
 Updates docs/api/llm-context.md with latest API changes.
 
-# NON-COMPLIANT
+## NON-COMPLIANT
 updated stuff
 fixed bug
 WIP
 ```
 
-## 11.2 Changelog Standards
+### 11.2 Changelog Standards
 
 Changelogs MUST follow Keep a Changelog format:
 
 ```markdown
-# Changelog
+## Changelog
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+### [Unreleased]
 
-### Added
+#### Added
 - OAuth2 authentication support (#123)
 
-### Changed
+#### Changed
 - Improved error messages for validation failures
 
-### Deprecated
+#### Deprecated
 - Legacy API v1 endpoints (removal in v3.0.0)
 
-### Fixed
+#### Fixed
 - Memory leak in connection pool (#456)
 
-### Security
+#### Security
 - Updated dependencies to patch CVE-2024-XXXX
 
-## [2.0.0] - 2024-01-15
+### [2.0.0] - 2024-01-15
 
-### Added
+#### Added
 - User management API
 
-### Changed
+#### Changed
 - **BREAKING**: Minimum Node.js version is now 18.x
 
-### Removed
+#### Removed
 - **BREAKING**: Removed deprecated `/api/legacy` endpoints
 
 [Unreleased]: https://github.com/org/repo/compare/v2.0.0...HEAD
@@ -1381,16 +1381,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-# SECTION 12: CI/CD INTEGRATION
+## SECTION 12: CI/CD INTEGRATION
 
-## 12.1 Documentation Generation Pipeline
+### 12.1 Documentation Generation Pipeline
 
 All projects MUST include automated documentation generation in CI/CD pipelines.
 
-### 12.1.1 GitHub Actions Configuration
+#### 12.1.1 GitHub Actions Configuration
 
 ```yaml
-# .github/workflows/docs.yml
+## .github/workflows/docs.yml
 name: Generate Documentation
 
 on:
@@ -1460,12 +1460,12 @@ jobs:
           retention-days: 30
 ```
 
-### 12.1.2 PHP Projects CI Configuration
+#### 12.1.2 PHP Projects CI Configuration
 
 For PHP projects using PHPDocumentor:
 
 ```yaml
-# Additional steps for PHP projects
+## Additional steps for PHP projects
 - name: Setup PHP
   uses: shivammathur/setup-php@v2
   with:
@@ -1479,12 +1479,12 @@ For PHP projects using PHPDocumentor:
   run: composer docs:all
 ```
 
-## 12.2 Pre-commit Hooks
+### 12.2 Pre-commit Hooks
 
 Projects SHOULD include pre-commit hooks to validate documentation:
 
 ```yaml
-# .pre-commit-config.yaml
+## .pre-commit-config.yaml
 repos:
   - repo: local
     hooks:
@@ -1498,9 +1498,9 @@ repos:
 
 ---
 
-# SECTION 13: APPLICATION INSTRUCTIONS
+## SECTION 13: APPLICATION INSTRUCTIONS
 
-## 13.1 Code Generation Mode
+### 13.1 Code Generation Mode
 
 When generating new code, you MUST:
 
@@ -1526,24 +1526,24 @@ When generating new code, you MUST:
    - Remind developers to run `npm run docs:all` or equivalent
    - Verify generated code will produce valid JSDoc/PHPDoc output
 
-## 13.2 Code Review Mode
+### 13.2 Code Review Mode
 
 When reviewing existing code, output a compliance report:
 
 ```markdown
-# Code Review: [filename]
+## Code Review: [filename]
 
-## Summary
+### Summary
 - **Compliance Score**: X/Y standards passed
 - **Critical Issues**: N
 - **Warnings**: N
 - **Suggestions**: N
 
-## Findings
+### Findings
 
-### Critical Issues (MUST fix)
+#### Critical Issues (MUST fix)
 
-#### [SECTION-ID] Issue Title
+##### [SECTION-ID] Issue Title
 - **Location**: `file.ts:42`
 - **Standard Violated**: [Quote relevant standard]
 - **Current Code**:
@@ -1556,17 +1556,17 @@ When reviewing existing code, output a compliance report:
   ```
 - **Explanation**: [Why this matters]
 
-### Warnings (SHOULD fix)
+#### Warnings (SHOULD fix)
 
-#### [SECTION-ID] Issue Title
+##### [SECTION-ID] Issue Title
 ...
 
-### Suggestions (MAY improve)
+#### Suggestions (MAY improve)
 
-#### [SECTION-ID] Issue Title
+##### [SECTION-ID] Issue Title
 ...
 
-## Documentation Status
+### Documentation Status
 
 - [ ] JSDoc/PHPDoc comments present for all public APIs
 - [ ] Comments include parameter types and descriptions
@@ -1574,7 +1574,7 @@ When reviewing existing code, output a compliance report:
 - [ ] Examples provided for complex methods
 - [ ] Will generate valid LLM context
 
-## Checklist
+### Checklist
 
 | Section | Standard | Status |
 |---------|----------|--------|
@@ -1586,7 +1586,7 @@ When reviewing existing code, output a compliance report:
 | 7.2 | Error handling patterns used | ✅ Pass |
 ```
 
-## 13.3 Documentation Generation Mode
+### 13.3 Documentation Generation Mode
 
 When generating documentation, you MUST:
 
@@ -1596,7 +1596,7 @@ When generating documentation, you MUST:
 4. Generate Mermaid diagrams for architecture docs
 5. Reference LLM context files when describing API usage
 
-## 13.4 LLM Context Usage Mode
+### 13.4 LLM Context Usage Mode
 
 When asked to generate code using existing APIs:
 
@@ -1618,7 +1618,7 @@ Assistant (You):
 5. Add JSDoc matching existing patterns
 ```
 
-## 13.5 Response Guidelines
+### 13.5 Response Guidelines
 
 For all interactions:
 
@@ -1631,9 +1631,9 @@ For all interactions:
 
 ---
 
-# APPENDIX A: QUICK REFERENCE CHECKLISTS
+## APPENDIX A: QUICK REFERENCE CHECKLISTS
 
-## New Project Checklist
+### New Project Checklist
 
 - [ ] Repository initialized with `.gitignore`
 - [ ] `README.md` with badges, overview, quick start
@@ -1650,7 +1650,7 @@ For all interactions:
 - [ ] Documentation generation workflow in CI/CD
 - [ ] Dependency scanning enabled
 
-## Pre-Commit Checklist
+### Pre-Commit Checklist
 
 - [ ] Code formatted by automated tool
 - [ ] Linter passes with no errors
@@ -1661,7 +1661,7 @@ For all interactions:
 - [ ] Commit message follows Conventional Commits
 - [ ] No secrets in code or commit history
 
-## Pre-Release Checklist
+### Pre-Release Checklist
 
 - [ ] Version number updated (SemVer)
 - [ ] `CHANGELOG.md` updated
@@ -1673,7 +1673,7 @@ For all interactions:
 - [ ] Breaking changes documented
 - [ ] Migration guide provided (if applicable)
 
-## API Documentation Checklist
+### API Documentation Checklist
 
 - [ ] All public classes have documentation comments
 - [ ] All public methods have documentation comments
@@ -1689,9 +1689,9 @@ For all interactions:
 
 ---
 
-# APPENDIX B: TOOL CONFIGURATIONS
+## APPENDIX B: TOOL CONFIGURATIONS
 
-## ESLint + Prettier (TypeScript)
+### ESLint + Prettier (TypeScript)
 
 ```json
 // .eslintrc.json
@@ -1732,7 +1732,7 @@ For all interactions:
 }
 ```
 
-## TypeDoc Configuration
+### TypeDoc Configuration
 
 ```json
 // typedoc.json
@@ -1759,10 +1759,10 @@ For all interactions:
 }
 ```
 
-## Python (Black + Ruff)
+### Python (Black + Ruff)
 
 ```toml
-# pyproject.toml
+## pyproject.toml
 [tool.black]
 line-length = 100
 target-version = ['py311']
@@ -1783,7 +1783,7 @@ output-directory = "docs/api/generated"
 docformat = "google"
 ```
 
-## PHPDocumentor Configuration
+### PHPDocumentor Configuration
 
 ```xml
 <!-- phpdoc.xml -->
@@ -1820,7 +1820,7 @@ docformat = "google"
 </phpdoc>
 ```
 
-## markdownlint
+### markdownlint
 
 ```json
 // .markdownlint.json
@@ -1834,9 +1834,9 @@ docformat = "google"
 
 ---
 
-# APPENDIX C: COMPLIANCE VS. NON-COMPLIANCE EXAMPLES
+## APPENDIX C: COMPLIANCE VS. NON-COMPLIANCE EXAMPLES
 
-## Example 1: README Structure
+### Example 1: README Structure
 
 <details>
 <summary>✅ COMPLIANT README</summary>
@@ -1857,7 +1857,7 @@ ai_context: |
   API reference available in docs/api/llm-context.md.
 ---
 
-# MyProject
+## MyProject
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/org/myproject/ci.yml)](...)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -1865,7 +1865,7 @@ ai_context: |
 
 > A REST API for user management with OAuth2 authentication.
 
-## Quick Start
+### Quick Start
 
 ```bash
 git clone https://github.com/org/myproject.git
@@ -1875,17 +1875,17 @@ cp .env.example .env
 npm run dev
 ```
 
-## Documentation
+### Documentation
 
 - [Setup Guide](docs/setup.md)
 - [API Reference](docs/api-reference.md) - Links to [LLM Context](docs/api/llm-context.md)
 - [Architecture](docs/architecture.md)
 
-## Contributing
+### Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## License
+### License
 
 [MIT](LICENSE) © 2024 MyOrg
 ```
@@ -1896,15 +1896,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 <summary>❌ NON-COMPLIANT README</summary>
 
 ```markdown
-# myproject
+## myproject
 
 this is my project it does stuff
 
-## install
+### install
 
 just run npm install i think
 
-## usage
+### usage
 
 idk figure it out
 
@@ -1922,7 +1922,7 @@ contact me@email.com for questions
 
 </details>
 
-## Example 2: API Documentation Comments
+### Example 2: API Documentation Comments
 
 <details>
 <summary>✅ COMPLIANT JSDoc</summary>
@@ -2028,7 +2028,7 @@ export class UserService {
 
 </details>
 
-## Example 3: Error Handling
+### Example 3: Error Handling
 
 <details>
 <summary>✅ COMPLIANT Error Handling</summary>
@@ -2121,7 +2121,7 @@ async function createUser(input: any) {
 
 </details>
 
-## Example 4: Generated LLM Context File
+### Example 4: Generated LLM Context File
 
 <details>
 <summary>✅ COMPLIANT llm-context.md</summary>
@@ -2144,35 +2144,35 @@ ai_context: |
   documentation comments.
 ---
 
-# API Reference (LLM Context)
+## API Reference (LLM Context)
 
 > **Generated:** 2024-06-15T10:30:00Z
 > **Version:** 1.2.0
 > **Purpose:** LLM-optimized API catalog for code automation
 
-## Quick Index
+### Quick Index
 
-### Classes
+#### Classes
 
 - [`UserService`](#class-userservice)
 - [`AuthService`](#class-authservice)
 
-### Functions
+#### Functions
 
 - [`hashPassword()`](#function-hashpassword)
 - [`validateEmail()`](#function-validateemail)
 
 ---
 
-## Classes
+### Classes
 
-### Class: `UserService`
+#### Class: `UserService`
 
 Service for managing user accounts and authentication.
 
-#### Methods
+##### Methods
 
-##### `getById(userId: string): Promise<User>`
+###### `getById(userId: string): Promise<User>`
 
 Retrieves a user by their unique identifier.
 
@@ -2186,7 +2186,7 @@ Retrieves a user by their unique identifier.
 - `NotFoundError` - When no user exists with the given ID
 - `ValidationError` - When userId format is invalid
 
-##### `create(input: CreateUserInput): Promise<User>`
+###### `create(input: CreateUserInput): Promise<User>`
 
 Creates a new user account.
 
@@ -2205,9 +2205,9 @@ Creates a new user account.
 
 ---
 
-## Functions
+### Functions
 
-### `hashPassword(password: string): Promise<string>`
+#### `hashPassword(password: string): Promise<string>`
 
 Hashes a password using bcrypt.
 
@@ -2217,7 +2217,7 @@ Hashes a password using bcrypt.
 
 **Returns:** `Promise<string>` - Hashed password
 
-### `validateEmail(email: string): boolean`
+#### `validateEmail(email: string): boolean`
 
 Validates an email address format.
 
@@ -2232,9 +2232,9 @@ Validates an email address format.
 
 ---
 
-# APPENDIX D: STANDARDS SUMMARY
+## APPENDIX D: STANDARDS SUMMARY
 
-## Quick Standards Reference
+### Quick Standards Reference
 
 | Category | Key Requirements | Section |
 |----------|-----------------|---------|
@@ -2252,7 +2252,7 @@ Validates an email address format.
 | **Version Control** | Conventional Commits, Keep a Changelog, SemVer | 11.1, 11.2 |
 | **CI/CD** | Auto-generate docs, validate on PR, commit to main | 12.1, 12.2 |
 
-## API Documentation Generation Quick Commands
+### API Documentation Generation Quick Commands
 
 | Platform | Generate All Docs | Generate JSON | Generate LLM Context |
 |----------|------------------|---------------|---------------------|
@@ -2262,4 +2262,4 @@ Validates an email address format.
 
 ---
 
-# END OF STANDARDS DOCUMENT
+**END OF STANDARDS DOCUMENT**
